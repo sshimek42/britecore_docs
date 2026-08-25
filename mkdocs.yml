@@ -5,6 +5,8 @@ nav:
   - Source Registry: docs/source_registry.md
   - Project Map: docs/project_map.md
   - Ingestion Workflow: docs/ingestion_workflow.md
+  - Integrations:
+      - Reporting Stack: docs/integrations/reporting_stack.md
   - Reporting:
       - Logical Layer: docs/reporting/logical_layer.md
       - Join Starters: docs/reporting/join_starters.md
