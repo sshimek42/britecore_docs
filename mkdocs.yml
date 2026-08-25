@@ -1,0 +1,18 @@
+site_name: britecore_docs
+site_description: Cross-project BriteCore documentation hub
+nav:
+  - Home: docs/index.md
+  - Source Registry: docs/source_registry.md
+  - Project Map: docs/project_map.md
+  - Ingestion Workflow: docs/ingestion_workflow.md
+  - Reporting:
+      - Logical Layer: docs/reporting/logical_layer.md
+      - Join Starters: docs/reporting/join_starters.md
+  - Projects:
+      - britecore_mcp: docs/projects/britecore_mcp.md
+      - britecore_sdk: docs/projects/britecore_sdk.md
+      - PolicyReporting: docs/projects/policy_reporting.md
+      - britecore_csv_loader: docs/projects/britecore_csv_loader.md
+theme:
+  name: mkdocs
+

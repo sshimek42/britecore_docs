@@ -1,0 +1,14 @@
+[project]
+name = "britecore-docs"
+version = "0.1.0"
+description = "Cross-project documentation hub for BriteCore tooling and reporting assets"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "mkdocs>=1.6.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
