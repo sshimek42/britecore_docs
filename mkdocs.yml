@@ -1,20 +1,54 @@
 site_name: britecore_docs
 site_description: Cross-project BriteCore documentation hub
 nav:
-  - Home: docs/index.md
-  - Source Registry: docs/source_registry.md
-  - Project Map: docs/project_map.md
-  - Ingestion Workflow: docs/ingestion_workflow.md
+  - Home: index.md
+  - Architecture: architecture.md
+  - Help Center Insights: help_center_insights.md
+  - Data Storage and Handling: data_storage_and_handling.md
+  - Data Lineage Reference: data_lineage_reference.md
+  - Entity Relationship Matrix: entity_relationship_matrix.md
+  - Glossary: glossary.md
+  - Decision Matrix: decision_matrix.md
+  - Consolidation Principles: consolidation_principles.md
+  - Source-of-Truth Matrix: source_of_truth_matrix.md
+  - CSV / API / SQL Mapping: csv_api_sql_mapping.md
+  - Access Mode Decision Matrix: access_mode_decision_matrix.md
+  - Bridge Table Guide: bridge_table_guide.md
+  - Field Mapping Cheat Sheet: field_mapping_cheat_sheet.md
+  - Join Chains and Lineage: join_chains_and_lineage.md
+  - Query Quickstarts: query_quickstarts.md
+  - Status and Enum Dictionary: status_and_enum_dictionary.md
+  - Relationship Catalog: relationship_catalog.md
+  - Domain Reference: domain_reference.md
+  - Reconciliation Checklist: reconciliation_checklist.md
+  - Common Gotchas and Anti-Patterns: common_gotchas_and_anti_patterns.md
+  - Record Trace Workflow: record_trace_workflow.md
+  - Data Flow and Grain Guide: data_flow_and_grain_guide.md
+  - BriteCore Status and Cancellation Semantics: britecore_status_and_cancellation_semantics.md
+  - Lineage Guide: lineage_guide.md
+  - Repo Selection Guide: repo_selection_guide.md
+  - Operating Manual: operating_manual.md
+  - Onboarding: onboarding.md
+  - Quickstarts: quickstarts.md
+  - Source Registry: source_registry.md
+  - Project Map: project_map.md
+  - Ingestion Workflow: ingestion_workflow.md
   - Integrations:
-      - Reporting Stack: docs/integrations/reporting_stack.md
+      - Reporting Stack: integrations/reporting_stack.md
   - Reporting:
-      - Logical Layer: docs/reporting/logical_layer.md
-      - Join Starters: docs/reporting/join_starters.md
+      - Logical Layer: reporting/logical_layer.md
+      - Join Starters: reporting/join_starters.md
+      - Reporting Playbook: reporting/reporting_playbook.md
+      - SQL Reporting Cookbook: reporting/sql_reporting_cookbook.md
+      - Report Metadata Examples: reporting/report_metadata_examples.md
+      - Field Discovery Checklist: reporting/field_discovery_checklist.md
   - Projects:
-      - britecore_mcp: docs/projects/britecore_mcp.md
-      - britecore_sdk: docs/projects/britecore_sdk.md
-      - PolicyReporting: docs/projects/policy_reporting.md
-      - britecore_csv_loader: docs/projects/britecore_csv_loader.md
+      - britecore_mcp: projects/britecore_mcp.md
+      - britecore_sql_reports: projects/britecore_sql_reports.md
+      - britecore_sdk: projects/britecore_sdk.md
+      - PolicyReporting: projects/policy_reporting.md
+      - britecore_csv_loader: projects/britecore_csv_loader.md
+      - policy-data-warehouse: projects/policy_data_warehouse.md
+      - NAIC: projects/naic.md
 theme:
   name: mkdocs
-
