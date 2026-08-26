@@ -34,6 +34,37 @@ Based on the local `README.md`, `PolicyReporting` sits above source interfaces a
 - SQL Server backend configuration and probing
 - SQL schema bootstrap and loader workflows
 
+## Fast local usage pattern
+
+```python
+from policy_reporting import CrossSourcePolicyQuery
+
+query = CrossSourcePolicyQuery.from_env()
+result = query.find_by_form("HO 002*")
+print(result.summary())
+```
+
+This reflects the documented design goal: one query interface that can include BriteCore and MIPS sources when available.
+
+## SQL backend workflow notes
+
+From the local `README.md`, common operational patterns include:
+
+- installing SQL extras (`.[sqlserver]`)
+- probing connection health (`python -m policy_reporting.sql_connection --probe`)
+- bootstrapping schema from `sql/sqlserver/*` folders
+- selecting the SQL forms table via `POLICY_REPORTING_SQL_FORMS_TABLE`
+
+For teams, these steps are the critical handoff between prototype reporting and productionized SQL-backed workflows.
+
+## Source interface alignment
+
+`PolicyReporting` is designed to sit above source interfaces and DAL layers. In practice, this makes it a good place to codify:
+
+- cross-source normalization
+- report object assembly
+- stable service contracts for downstream API/UI layers
+
 ## Recommended use cases
 
 Use `PolicyReporting` first when:
@@ -48,4 +79,8 @@ Use `PolicyReporting` first when:
 - can consume normalized logical-layer understanding from `britecore_mcp`
 - can complement `britecore_sdk` for API-fed workflows
 - can use exported/raw data patterns documented in `britecore-csv-loader`
+
+## Where this fits in the reporting stack
+
+Use `PolicyReporting` when the requirement moves beyond single-repo analysis into a shared service layer. Keep table/field semantics anchored in `britecore_mcp` docs, then map those semantics into cross-source query services here.
 

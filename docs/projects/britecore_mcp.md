@@ -35,6 +35,40 @@ Based on the local `README.md`, `britecore_mcp` is designed for read-only analys
 - report-table documentation for `v_*` views
 - practical join guidance for the logical layer
 
+## Fast local run pattern
+
+```powershell
+cd C:\PythonProjects\BriteCore\britecore_mcp
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install .
+```
+
+Typical local server run:
+
+```powershell
+cd C:\PythonProjects\BriteCore\britecore_mcp
+.\.venv\Scripts\python.exe -m britecore_mcp.server
+```
+
+## Cache and profile workflows
+
+For logical-layer behavior that depends on cached artifacts, the local docs center around:
+
+- `scripts\rebuild_cache.py` for cache refresh
+- `scripts\rebuild_bc_report_cache.py` for report snapshot cache generation
+- `scripts\bc_report_cache_profiles.json` for profile configuration
+
+This is the main operational surface for preparing repeatable local report runs before container/image deployment.
+
+## High-value report documentation assets
+
+- `scripts\report_tables_readme.md` (table-doc index)
+- `scripts\report_table_doc_framework.md` (authoring framework)
+- `scripts\report_join_starters.md` (query/join starter patterns)
+
+Together, these provide a practical documentation workflow anchored on `v_logical_catalog`.
+
 ## Recommended use cases
 
 Use `britecore_mcp` first when:
@@ -49,4 +83,12 @@ Use `britecore_mcp` first when:
 - pairs with `britecore_sdk` when API-side access or automation is needed
 - pairs with `PolicyReporting` when cross-source reporting or SQL-backed service workflows are needed
 - pairs with `britecore-csv-loader` when raw CSV relationship exploration is needed outside the logical SQL layer
+
+## Where this fits in the reporting stack
+
+Use `britecore_mcp` as the primary logical-layer documentation and exploration surface. Use other projects when you need:
+
+- live API retrieval (`britecore_sdk`)
+- raw export relationship reconstruction (`britecore-csv-loader`)
+- unified multi-source service workflows (`PolicyReporting`)
 
