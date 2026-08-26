@@ -22,6 +22,10 @@ nav:
   - Domain Reference: domain_reference.md
   - Claim Domain Guide: claim_domain_guide.md
   - Policy and Revision Domain Guide: policy_domain_guide.md
+  - Contact Domain Guide: contact_domain_guide.md
+  - Property and Risk Domain Guide: property_domain_guide.md
+  - Payment and Billing Domain Guide: payment_domain_guide.md
+  - AI Workflow Guide for Other Repos: ai_workflow_guide.md
   - Reconciliation Checklist: reconciliation_checklist.md
   - Common Gotchas and Anti-Patterns: common_gotchas_and_anti_patterns.md
   - Record Trace Workflow: record_trace_workflow.md

@@ -49,6 +49,10 @@ This project unifies the documentation and working model across the local BriteC
 - [Domain Reference](domain_reference.md) — the domain-level map for claims, policy/revision records, contacts, properties, payments, and related objects
 - [Claim Domain Guide](claim_domain_guide.md) — the practical lineage and join map for claim data
 - [Policy and Revision Domain Guide](policy_domain_guide.md) — the practical lineage and join map for policy and revision data
+- [Contact Domain Guide](contact_domain_guide.md) — how contact records connect to claims, revisions, and communication child tables
+- [Property and Risk Domain Guide](property_domain_guide.md) — how property/risk data connects to revision and mortgagee records
+- [Payment and Billing Domain Guide](payment_domain_guide.md) — how payment headers and item-detail data are linked across the platform
+- [AI Workflow Guide for Other Repos](ai_workflow_guide.md) — how to work in the other BriteCore repos without duplicating implementation in the docs repo
 - [Reconciliation Checklist](reconciliation_checklist.md) — a repeatable validation flow for comparing raw CSV, API, and report-layer records
 - [Common Gotchas and Anti-Patterns](common_gotchas_and_anti_patterns.md) — the recurring mistakes that make BriteCore joins and mappings look inconsistent
 - [Record Trace Workflow](record_trace_workflow.md) — how to trace a policy, claim, or contact end to end across layers
