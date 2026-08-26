@@ -53,6 +53,7 @@ This project unifies the documentation and working model across the local BriteC
 - [Property and Risk Domain Guide](property_domain_guide.md) — how property/risk data connects to revision and mortgagee records
 - [Payment and Billing Domain Guide](payment_domain_guide.md) — how payment headers and item-detail data are linked across the platform
 - [AI Workflow Guide for Other Repos](ai_workflow_guide.md) — how to work in the other BriteCore repos without duplicating implementation in the docs repo
+- [Repo-by-Repo AI Usage Guide](repo_ai_usage_guide.md) — a practical guide for using AI in each project without losing repo boundaries
 - [Reconciliation Checklist](reconciliation_checklist.md) — a repeatable validation flow for comparing raw CSV, API, and report-layer records
 - [Common Gotchas and Anti-Patterns](common_gotchas_and_anti_patterns.md) — the recurring mistakes that make BriteCore joins and mappings look inconsistent
 - [Record Trace Workflow](record_trace_workflow.md) — how to trace a policy, claim, or contact end to end across layers

@@ -26,6 +26,7 @@ nav:
   - Property and Risk Domain Guide: property_domain_guide.md
   - Payment and Billing Domain Guide: payment_domain_guide.md
   - AI Workflow Guide for Other Repos: ai_workflow_guide.md
+  - Repo-by-Repo AI Usage Guide: repo_ai_usage_guide.md
   - Reconciliation Checklist: reconciliation_checklist.md
   - Common Gotchas and Anti-Patterns: common_gotchas_and_anti_patterns.md
   - Record Trace Workflow: record_trace_workflow.md
