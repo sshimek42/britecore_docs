@@ -57,7 +57,8 @@ For logical-layer behavior that depends on cached artifacts, the local docs cent
 
 - `scripts\rebuild_cache.py` for cache refresh
 - `scripts\rebuild_bc_report_cache.py` for report snapshot cache generation
-- `britecore_sql_reports\scripts\config\bc_report_cache_profiles.json` for profile configuration
+- `britecore_mcp\scripts\config\bc_report_cache_profiles.json` for profile configuration
+- `britecore_mcp\data\bc_report_snapshot_cache.json` for the generated report snapshot cache
 
 This is the main operational surface for preparing repeatable local report runs before container/image deployment.
 

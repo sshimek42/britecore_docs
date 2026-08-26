@@ -14,13 +14,14 @@ It includes:
 - report-table documentation
 - join starters and grain guidance
 - SQL report validation notes
-- report cache profiles and snapshot cache artifacts
 
 ## Source-of-truth boundary
 
-- `britecore_sql_reports` = canonical report SQL, report docs, cache metadata, and validation artifacts
-- `britecore_mcp` = runtime discovery and logical-layer execution behavior
+- `britecore_sql_reports` = canonical report SQL and report docs
+- `britecore_mcp` = runtime discovery, cache files, and operational report-execution metadata
 - `britecore_docs` = architecture and explanatory context across the ecosystem
+
+Runtime cache/config artifacts are intentionally not treated as SQL report source-of-truth.
 
 ## Best-known documentation entry points
 
@@ -29,9 +30,6 @@ It includes:
 - `C:\PythonProjects\BriteCore\britecore_sql_reports\scripts\report_docs\report_tables_readme.md`
 - `C:\PythonProjects\BriteCore\britecore_sql_reports\scripts\report_docs\report_table_doc_framework.md`
 - `C:\PythonProjects\BriteCore\britecore_sql_reports\scripts\report_docs\report_join_starters.md`
-- `C:\PythonProjects\BriteCore\britecore_sql_reports\scripts\config\bc_report_cache_profiles.json`
-- `C:\PythonProjects\BriteCore\britecore_sql_reports\scripts\config\bc_report_cache_profiles_safe.json`
-- `C:\PythonProjects\BriteCore\britecore_sql_reports\data\bc_report_snapshot_cache.json`
 
 ## What it is strongest at
 
