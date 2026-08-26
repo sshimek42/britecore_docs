@@ -20,6 +20,8 @@ nav:
   - Status and Enum Dictionary: status_and_enum_dictionary.md
   - Relationship Catalog: relationship_catalog.md
   - Domain Reference: domain_reference.md
+  - Claim Domain Guide: claim_domain_guide.md
+  - Policy and Revision Domain Guide: policy_domain_guide.md
   - Reconciliation Checklist: reconciliation_checklist.md
   - Common Gotchas and Anti-Patterns: common_gotchas_and_anti_patterns.md
   - Record Trace Workflow: record_trace_workflow.md

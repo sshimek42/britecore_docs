@@ -47,6 +47,8 @@ This project unifies the documentation and working model across the local BriteC
 - [Status and Enum Dictionary](status_and_enum_dictionary.md) — normalized meanings for active, deleted, terminated, claim state, policy state, and role flags
 - [Relationship Catalog](relationship_catalog.md) — the major parent-child and bridge relationships across policies, claims, contacts, and properties
 - [Domain Reference](domain_reference.md) — the domain-level map for claims, policy/revision records, contacts, properties, payments, and related objects
+- [Claim Domain Guide](claim_domain_guide.md) — the practical lineage and join map for claim data
+- [Policy and Revision Domain Guide](policy_domain_guide.md) — the practical lineage and join map for policy and revision data
 - [Reconciliation Checklist](reconciliation_checklist.md) — a repeatable validation flow for comparing raw CSV, API, and report-layer records
 - [Common Gotchas and Anti-Patterns](common_gotchas_and_anti_patterns.md) — the recurring mistakes that make BriteCore joins and mappings look inconsistent
 - [Record Trace Workflow](record_trace_workflow.md) — how to trace a policy, claim, or contact end to end across layers
