@@ -37,6 +37,53 @@ Based on the local `README.md`, `GETTING_STARTED.md`, and `ARCHITECTURE.md`, `br
 - domain/API/infrastructure layering in the SDK architecture
 - troubleshooting and optional extras for async or interactive usage
 
+## Fast local setup pattern
+
+From the local SDK docs, the fastest setup path is:
+
+```powershell
+cd C:\PythonProjects\BriteCore\britecore_sdk
+python -m pip install -e .
+```
+
+Optional extras are available when needed (for example async transport or typed settings):
+
+```powershell
+python -m pip install -e ".[async-http]"
+python -m pip install -e ".[typed-config]"
+```
+
+## Authentication and configuration modes
+
+The SDK documentation emphasizes configuration-first setup, with credentials coming from config files and/or environment variables.
+
+Common modes:
+
+- API key authentication
+- OAuth client authentication
+- environment-driven configuration for CI/runtime automation
+
+For team onboarding, keep a short internal runbook with:
+
+- where credentials are provisioned in BriteCore UI
+- how `target_site` is selected
+- which env vars are mandatory per environment
+
+## Minimal usage pattern
+
+```python
+from britecore_sdk.api.api_calls import get_api_client
+from britecore_sdk.api.api_calls.v2 import policies
+
+client = get_api_client()
+result = policies.retrieve_policy(policy_number="POL001")
+print(result)
+```
+
+## Where this fits in the reporting stack
+
+`britecore_sdk` is the best choice when data must be pulled from live API endpoints or integration workflows. For report-view/table discovery and SQL-layer field semantics, use `britecore_mcp` and its logical-layer docs.
+
 ## Recommended use cases
 
 Use `britecore_sdk` first when:

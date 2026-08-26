@@ -34,6 +34,52 @@ Based on the local `README.md` and `CSV_RELATIONSHIPS_OVERVIEW.md`, `britecore-c
 - policyholder, revision, property, item, claim, and contact linkage patterns
 - claims-extractor workflows for reporting-year outputs
 
+## Relationship model highlights
+
+From `CSV_RELATIONSHIPS_OVERVIEW.md`, the raw-export model is strongly revision-centric with high reuse of:
+
+- `revisionId`
+- `policyId`
+- `claimId`
+- `itemId`
+- `contactId`
+- `propertyId`
+
+This makes the project especially valuable for validating joins and row-grain assumptions before translating logic into `v_*`/`m_*` SQL reporting layers.
+
+## Fast local usage patterns
+
+Python interface:
+
+```python
+from britecore_csv_loader import RawCsvInterface
+
+api = RawCsvInterface()
+revision_id = api.load_dataset("revisions")[0]["revisionId"]
+
+print(api.revision_summary(revision_id))
+print(api.extract_entity_links(revision_id))
+print(api.get_policy_snapshot(revision_id)["policySnapshot"])
+```
+
+CLI relationship inspection:
+
+```powershell
+python -m britecore_csv_loader.cli --relationships
+```
+
+Claims extractor pattern:
+
+```powershell
+python -m britecore_csv_loader.part2_claims --reporting-year 2025
+```
+
+## Operational tuning notes
+
+- Use `low_memory_mode=True` in `RawCsvInterface` when RAM is constrained.
+- For DuckDB-backed workflows, cap memory/threads explicitly in lower-memory environments.
+- Keep a known-good data directory convention documented for analysts to avoid path drift across local machines.
+
 ## Recommended use cases
 
 Use `britecore-csv-loader` first when:
@@ -54,4 +100,8 @@ Use `britecore-csv-loader` first when:
 `CSV_RELATIONSHIPS_OVERVIEW.md` is a high-value source for understanding practical joins and relationship frequency in raw CSV exports.
 
 It is especially useful as a bridge between raw-export datasets and the more curated logical-layer docs in `britecore_mcp`.
+
+## Where this fits in the reporting stack
+
+Use `britecore-csv-loader` when raw-export lineage or relationship validation is the main goal. Use `britecore_mcp` when the target deliverable is SQL-report logic over the logical layer, and use `PolicyReporting` for unified multi-source service workflows.
 
