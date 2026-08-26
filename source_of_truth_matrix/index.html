@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Source-of-Truth Matrix - britecore_docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">britecore_docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../architecture/" class="nav-link">Architecture</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../help_center_insights/" class="nav-link">Help Center Insights</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_storage_and_handling/" class="nav-link">Data Storage and Handling</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_lineage_reference/" class="nav-link">Data Lineage Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../entity_relationship_matrix/" class="nav-link">Entity Relationship Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../decision_matrix/" class="nav-link">Decision Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../consolidation_principles/" class="nav-link">Consolidation Principles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Source-of-Truth Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../csv_api_sql_mapping/" class="nav-link">CSV / API / SQL Mapping</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../access_mode_decision_matrix/" class="nav-link">Access Mode Decision Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../bridge_table_guide/" class="nav-link">Bridge Table Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../field_mapping_cheat_sheet/" class="nav-link">Field Mapping Cheat Sheet</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../join_chains_and_lineage/" class="nav-link">Join Chains and Lineage</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../query_quickstarts/" class="nav-link">Query Quickstarts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../status_and_enum_dictionary/" class="nav-link">Status and Enum Dictionary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../relationship_catalog/" class="nav-link">Relationship Catalog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../domain_reference/" class="nav-link">Domain Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../claim_domain_guide/" class="nav-link">Claim Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../policy_domain_guide/" class="nav-link">Policy and Revision Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../contact_domain_guide/" class="nav-link">Contact Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../property_domain_guide/" class="nav-link">Property and Risk Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../payment_domain_guide/" class="nav-link">Payment and Billing Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ai_workflow_guide/" class="nav-link">AI Workflow Guide for Other Repos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../repo_ai_usage_guide/" class="nav-link">Repo-by-Repo AI Usage Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reconciliation_checklist/" class="nav-link">Reconciliation Checklist</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../common_gotchas_and_anti_patterns/" class="nav-link">Common Gotchas and Anti-Patterns</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../record_trace_workflow/" class="nav-link">Record Trace Workflow</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_flow_and_grain_guide/" class="nav-link">Data Flow and Grain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../britecore_status_and_cancellation_semantics/" class="nav-link">BriteCore Status and Cancellation Semantics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../lineage_guide/" class="nav-link">Lineage Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../repo_selection_guide/" class="nav-link">Repo Selection Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../operating_manual/" class="nav-link">Operating Manual</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../onboarding/" class="nav-link">Onboarding</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../quickstarts/" class="nav-link">Quickstarts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../source_registry/" class="nav-link">Source Registry</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../project_map/" class="nav-link">Project Map</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ingestion_workflow/" class="nav-link">Ingestion Workflow</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Integrations</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../integrations/reporting_stack/" class="dropdown-item">Reporting Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Reporting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../reporting/logical_layer/" class="dropdown-item">Logical Layer</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/join_starters/" class="dropdown-item">Join Starters</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/reporting_playbook/" class="dropdown-item">Reporting Playbook</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/sql_reporting_cookbook/" class="dropdown-item">SQL Reporting Cookbook</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/report_metadata_examples/" class="dropdown-item">Report Metadata Examples</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/field_discovery_checklist/" class="dropdown-item">Field Discovery Checklist</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../projects/britecore_mcp/" class="dropdown-item">britecore_mcp</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_sql_reports/" class="dropdown-item">britecore_sql_reports</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_sdk/" class="dropdown-item">britecore_sdk</a>
+</li>
+                                    
+<li>
+    <a href="../projects/policy_reporting/" class="dropdown-item">PolicyReporting</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_csv_loader/" class="dropdown-item">britecore_csv_loader</a>
+</li>
+                                    
+<li>
+    <a href="../projects/policy_data_warehouse/" class="dropdown-item">policy-data-warehouse</a>
+</li>
+                                    
+<li>
+    <a href="../projects/naic/" class="dropdown-item">NAIC</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../consolidation_principles/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../csv_api_sql_mapping/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#source-of-truth-matrix" class="nav-link">Source-of-Truth Matrix</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#canonical-ownership-by-concern" class="nav-link">Canonical ownership by concern</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#api-docs-are-often-the-best-resource-relationship-guide" class="nav-link">API docs are often the best resource-relationship guide</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-same-pattern-is-consistent-across-the-whole-sdk" class="nav-link">The same pattern is consistent across the whole SDK</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#practical-interpretation" class="nav-link">Practical interpretation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#helpful-shorthand" class="nav-link">Helpful shorthand</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#base-entity-naming-rule" class="nav-link">Base-entity naming rule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#consolidation-rule-for-this-docs-repo" class="nav-link">Consolidation rule for this docs repo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="source-of-truth-matrix">Source-of-Truth Matrix</h1>
+<p>This page is the short answer to a recurring question in the BriteCore ecosystem: which repo owns the canonical details for a given task?</p>
+<p>The rule is simple:</p>
+<ul>
+<li>If the question is about source-system behavior, start in the source project.</li>
+<li>If the question is about how the ecosystem fits together, use this repo.</li>
+<li>If the question is about a specific operational implementation, go to the repo that owns that implementation.</li>
+</ul>
+<h2 id="canonical-ownership-by-concern">Canonical ownership by concern</h2>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Canonical owner</th>
+<th>Why it is authoritative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MCP runtime behavior and logical-layer discovery</td>
+<td><code>britecore_mcp</code></td>
+<td>Owns the interactive toolchain and logical view patterns</td>
+</tr>
+<tr>
+<td>SQL report definitions and validation SQL</td>
+<td><code>britecore_sql_reports</code></td>
+<td>Owns the report specs and report metadata</td>
+</tr>
+<tr>
+<td>SDK/API access patterns and resource relationships</td>
+<td><code>britecore_sdk</code></td>
+<td>Owns the client, auth, config, endpoint contracts, and resource-level relationship definitions</td>
+</tr>
+<tr>
+<td>Cross-source reporting service logic</td>
+<td><code>PolicyReporting</code></td>
+<td>Owns the service-layer assembly and report-object logic</td>
+</tr>
+<tr>
+<td>Raw CSV structure and relationship reconstruction</td>
+<td><code>britecore-csv-loader</code></td>
+<td>Owns CSV ingestion, <code>*Id</code> linkage, and revision snapshots</td>
+</tr>
+<tr>
+<td>Warehouse landing, normalization, and report-ready views</td>
+<td><code>policy-data-warehouse</code></td>
+<td>Owns raw/core/reporting schema boundaries and loader logic</td>
+</tr>
+<tr>
+<td>Regulatory extraction and BriteCore-to-NAIC translation</td>
+<td><code>NAIC</code></td>
+<td>Owns the report-generation and mapping logic</td>
+</tr>
+<tr>
+<td>This docs hub</td>
+<td><code>britecore_docs</code></td>
+<td>Explains the ecosystem, not the implementation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="api-docs-are-often-the-best-resource-relationship-guide">API docs are often the best resource-relationship guide</h2>
+<p>For entity relationships, the SDK API docs and endpoint modules are often the clearest source of truth for:</p>
+<ul>
+<li>which resource groups exist (<code>contacts</code>, <code>claims</code>, <code>policies</code>, <code>payments</code>, etc.)</li>
+<li>which request parameters are required for a lookup</li>
+<li>which ids are returned by a call and therefore become the next lookup key</li>
+<li>which resource domain is the canonical place for a relationship lookup</li>
+</ul>
+<p>This is especially useful before translating from nested API objects into flattened SQL/report views. The API wrapper signatures themselves are a practical map of the chain.</p>
+<h2 id="the-same-pattern-is-consistent-across-the-whole-sdk">The same pattern is consistent across the whole SDK</h2>
+<p>This is not limited to claims, contacts, and policies. The v2 SDK modules under <code>src/britecore_sdk/api/api_calls/v2/</code> follow the same broad contract across the entire product surface.</p>
+<p>Examples:</p>
+<ul>
+<li><code>files.py</code>: <code>generate_download_url(file_id=...)</code>, <code>retrieve_active_file_objects(date_added_from=..., label=...)</code></li>
+<li><code>drivers.py</code>: <code>create_driver(driver)</code>, <code>get_driver(id)</code>, <code>list_drivers_for_quote(quote_id)</code>, <code>update_driver(driver)</code>, <code>delete_driver(id)</code></li>
+<li><code>vehicles.py</code>: <code>create_vehicle(vehicle)</code>, <code>get_vehicle(id)</code>, <code>list_vehicles_for_quote(quote_id)</code>, <code>delete_vehicle(id)</code></li>
+<li><code>claims.py</code>: <code>get_claim(claim_id=...)</code>, <code>get_claim_contacts(claim_id=...)</code>, <code>get_claim_payments(claim_id=...)</code></li>
+<li><code>policies.py</code>: <code>retrieve_policy(policy_number=...)</code>, <code>retrieve_policy_ids(policy_number=...)</code>, <code>retrieve_policy_terms(policy_id=...)</code>, <code>retrieve_revision_details(revision_id=...)</code></li>
+</ul>
+<p>The pattern is usually:</p>
+<ol>
+<li>list the things belonging to a parent object or quote</li>
+<li>get one object by id or by a stable business key</li>
+<li>fan out to relationship-specific calls using the returned id</li>
+<li>create/update/delete through the same domain contract</li>
+</ol>
+<p>This means the ecosystem can often be linked end-to-end by following the request/response ids and parent-child relationships, not just by a handful of headline entities.</p>
+<h2 id="practical-interpretation">Practical interpretation</h2>
+<h3 id="use-this-repo-when-you-need">Use this repo when you need:</h3>
+<ul>
+<li>a mental model of the whole stack</li>
+<li>repo-role guidance</li>
+<li>task-based routing</li>
+<li>cross-project terminology</li>
+<li>bridge knowledge not owned in a single implementation repo</li>
+</ul>
+<h3 id="do-not-use-this-repo-as-the-implementation-source-of-truth-for">Do not use this repo as the implementation source-of-truth for:</h3>
+<ul>
+<li>raw SQL</li>
+<li>loader logic</li>
+<li>report SQL definitions</li>
+<li>API patterns</li>
+<li>CSV extraction logic</li>
+<li>runtime MCP behavior</li>
+</ul>
+<h2 id="helpful-shorthand">Helpful shorthand</h2>
+<p>If the question is:</p>
+<ul>
+<li>“What is the raw data shape?” → <code>britecore-csv-loader</code></li>
+<li>“What does the warehouse do?” → <code>policy-data-warehouse</code></li>
+<li>“How do I get a report-ready answer across sources?” → <code>PolicyReporting</code></li>
+<li>“How do I produce a NAIC report?” → <code>NAIC</code></li>
+<li>“What is the base entity naming pattern?” → <code>britecore-csv-loader</code> + <code>csv_api_sql_mapping.md</code></li>
+<li>“How does this ecosystem fit together?” → <code>britecore_docs</code></li>
+</ul>
+<h2 id="base-entity-naming-rule">Base-entity naming rule</h2>
+<p>For base entities, the raw CSV name is usually the best first clue to the entity-level SQL/report view name.</p>
+<p>Examples:</p>
+<ul>
+<li><code>Contacts.csv</code> → <code>v_contacts</code></li>
+<li><code>Claims.csv</code> → <code>v_claims</code></li>
+<li><code>Properties.csv</code> → <code>v_properties</code></li>
+<li><code>Revisions.csv</code> → <code>v_revisions</code></li>
+</ul>
+<p>This is a strong rule for base entities and entity master tables, but not for many-to-many bridge views such as <code>v_claims_contacts</code> and <code>v_revisions_contacts</code>, which are relationship views rather than direct raw-file mirrors.</p>
+<h2 id="consolidation-rule-for-this-docs-repo">Consolidation rule for this docs repo</h2>
+<p>When a fact is useful to more than one project but not owned by any one implementation repo, it belongs here as a synthesized bridge document.</p>
+<p>Good examples:</p>
+<ul>
+<li>raw-to-warehouse-to-report flow</li>
+<li>BriteCore status/cancellation semantics</li>
+<li>revision/policy/claim lineage</li>
+<li>repo-selection guidance by task</li>
+</ul>
+<p>This keeps the project useful without becoming a second implementation repo.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

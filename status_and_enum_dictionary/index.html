@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Status and Enum Dictionary - britecore_docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">britecore_docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../architecture/" class="nav-link">Architecture</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../help_center_insights/" class="nav-link">Help Center Insights</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_storage_and_handling/" class="nav-link">Data Storage and Handling</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_lineage_reference/" class="nav-link">Data Lineage Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../entity_relationship_matrix/" class="nav-link">Entity Relationship Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../decision_matrix/" class="nav-link">Decision Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../consolidation_principles/" class="nav-link">Consolidation Principles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../source_of_truth_matrix/" class="nav-link">Source-of-Truth Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../csv_api_sql_mapping/" class="nav-link">CSV / API / SQL Mapping</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../access_mode_decision_matrix/" class="nav-link">Access Mode Decision Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../bridge_table_guide/" class="nav-link">Bridge Table Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../field_mapping_cheat_sheet/" class="nav-link">Field Mapping Cheat Sheet</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../join_chains_and_lineage/" class="nav-link">Join Chains and Lineage</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../query_quickstarts/" class="nav-link">Query Quickstarts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Status and Enum Dictionary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../relationship_catalog/" class="nav-link">Relationship Catalog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../domain_reference/" class="nav-link">Domain Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../claim_domain_guide/" class="nav-link">Claim Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../policy_domain_guide/" class="nav-link">Policy and Revision Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../contact_domain_guide/" class="nav-link">Contact Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../property_domain_guide/" class="nav-link">Property and Risk Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../payment_domain_guide/" class="nav-link">Payment and Billing Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ai_workflow_guide/" class="nav-link">AI Workflow Guide for Other Repos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../repo_ai_usage_guide/" class="nav-link">Repo-by-Repo AI Usage Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reconciliation_checklist/" class="nav-link">Reconciliation Checklist</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../common_gotchas_and_anti_patterns/" class="nav-link">Common Gotchas and Anti-Patterns</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../record_trace_workflow/" class="nav-link">Record Trace Workflow</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_flow_and_grain_guide/" class="nav-link">Data Flow and Grain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../britecore_status_and_cancellation_semantics/" class="nav-link">BriteCore Status and Cancellation Semantics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../lineage_guide/" class="nav-link">Lineage Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../repo_selection_guide/" class="nav-link">Repo Selection Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../operating_manual/" class="nav-link">Operating Manual</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../onboarding/" class="nav-link">Onboarding</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../quickstarts/" class="nav-link">Quickstarts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../source_registry/" class="nav-link">Source Registry</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../project_map/" class="nav-link">Project Map</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ingestion_workflow/" class="nav-link">Ingestion Workflow</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Integrations</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../integrations/reporting_stack/" class="dropdown-item">Reporting Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Reporting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../reporting/logical_layer/" class="dropdown-item">Logical Layer</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/join_starters/" class="dropdown-item">Join Starters</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/reporting_playbook/" class="dropdown-item">Reporting Playbook</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/sql_reporting_cookbook/" class="dropdown-item">SQL Reporting Cookbook</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/report_metadata_examples/" class="dropdown-item">Report Metadata Examples</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/field_discovery_checklist/" class="dropdown-item">Field Discovery Checklist</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../projects/britecore_mcp/" class="dropdown-item">britecore_mcp</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_sql_reports/" class="dropdown-item">britecore_sql_reports</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_sdk/" class="dropdown-item">britecore_sdk</a>
+</li>
+                                    
+<li>
+    <a href="../projects/policy_reporting/" class="dropdown-item">PolicyReporting</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_csv_loader/" class="dropdown-item">britecore_csv_loader</a>
+</li>
+                                    
+<li>
+    <a href="../projects/policy_data_warehouse/" class="dropdown-item">policy-data-warehouse</a>
+</li>
+                                    
+<li>
+    <a href="../projects/naic/" class="dropdown-item">NAIC</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../query_quickstarts/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../relationship_catalog/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#status-and-enum-dictionary" class="nav-link">Status and Enum Dictionary</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#why-this-matters" class="nav-link">Why this matters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#core-status-families" class="nav-link">Core status families</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#common-boolean-and-flag-patterns" class="nav-link">Common boolean and flag patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#role-and-tags-vocabulary" class="nav-link">Role and tags vocabulary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#date-and-lifecycle-semantics" class="nav-link">Date and lifecycle semantics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#common-status-confusion-patterns" class="nav-link">Common status confusion patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#recommended-reporting-rule" class="nav-link">Recommended reporting rule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#short-reference-list" class="nav-link">Short reference list</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#good-operational-rule" class="nav-link">Good operational rule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="status-and-enum-dictionary">Status and Enum Dictionary</h1>
+<p>This page captures the most important status, enum, and flag fields that appear repeatedly across BriteCore data.</p>
+<p>The goal is to reduce the chance of misreading the same concept under different names across CSV, API, and SQL/report layers.</p>
+<h2 id="why-this-matters">Why this matters</h2>
+<p>The same business state can appear in several ways:</p>
+<ul>
+<li>as a raw CSV field like <code>policyStatus</code> or <code>status</code></li>
+<li>as an API field like <code>status</code>, <code>policy_status</code>, or <code>revision_state</code></li>
+<li>as a SQL/report field such as <code>claim_status</code>, <code>policy_status</code>, or <code>deleted</code></li>
+</ul>
+<p>These fields often have different names across layers, but the underlying semantics are very similar.</p>
+<h2 id="core-status-families">Core status families</h2>
+<h3 id="policy-and-revision-status">Policy and revision status</h3>
+<p>Common concepts:</p>
+<ul>
+<li>active / inactive</li>
+<li>in force / canceled / expired / rewritten</li>
+<li>renewal status</li>
+<li>revision state and term state</li>
+</ul>
+<p>Typical field names:</p>
+<ul>
+<li>CSV: <code>policyStatus</code>, <code>renewalStatus</code>, <code>cancelDate</code>, <code>newOrRenewalTerm</code></li>
+<li>API: <code>status</code>, <code>policy_status</code>, <code>renewal_status</code>, <code>cancellation</code> data</li>
+<li>SQL/report: <code>policy_status</code>, <code>revision_state</code>, <code>term_effective_date</code>, <code>term_expiration_date</code></li>
+</ul>
+<p>Interpretation rule:</p>
+<ul>
+<li><code>policy_status</code> describes the policy lifecycle state</li>
+<li><code>revision_state</code> describes the revision or term workflow state</li>
+<li><code>cancelDate</code> and cancellation reason are usually historical/operational facts, not the same as a simple current-state status flag</li>
+</ul>
+<h3 id="claim-status">Claim status</h3>
+<p>Typical field names:</p>
+<ul>
+<li>CSV: <code>status</code></li>
+<li>API: <code>status</code></li>
+<li>SQL/report: <code>claim_status</code>, <code>claim_active_flag</code></li>
+</ul>
+<p>Interpretation rule:</p>
+<ul>
+<li><code>claim_status</code> is usually the operational lifecycle state</li>
+<li><code>claim_active_flag</code> is a boolean-ish signal used for current-versus-historical filtering</li>
+<li>status text may include historical or conversion states, so do not assume a narrow modern enum without checking sample data</li>
+</ul>
+<h3 id="contact-status">Contact status</h3>
+<p>Typical field names:</p>
+<ul>
+<li>CSV: <code>active</code>, <code>terminated</code>, <code>terminationReason</code>, <code>flag</code></li>
+<li>API: <code>is_agent</code>, <code>terminated</code>, <code>termination_reason</code>, <code>system_tags</code></li>
+<li>SQL/report: <code>deleted</code>, <code>agent_terminated</code>, <code>termination_reason</code>, <code>roles</code></li>
+</ul>
+<p>Interpretation rule:</p>
+<ul>
+<li><code>deleted</code> is often a soft-deletion or inactive flag, not always the same as <code>terminated</code></li>
+<li><code>terminated</code> and <code>agent_terminated</code> often reflect a business status, not a system-delete state</li>
+<li><code>roles</code> may carry a large amount of semantic status/context beyond a simple boolean flag</li>
+</ul>
+<h2 id="common-boolean-and-flag-patterns">Common boolean and flag patterns</h2>
+<p>These fields recur often and are usually easy to misread:</p>
+<ul>
+<li><code>deleted</code> / <code>is_deleted</code> / <code>deleted_flag</code></li>
+<li><code>active</code> / <code>is_active</code> / <code>active_flag</code></li>
+<li><code>terminated</code> / <code>is_terminated</code></li>
+<li><code>rewritten</code></li>
+<li><code>historical</code></li>
+<li><code>superuser_flag</code></li>
+<li><code>terms_conditions_accepted</code></li>
+<li><code>edelivery_enabled</code></li>
+<li><code>follow_agency_quoting_restriction</code></li>
+</ul>
+<h3 id="rule-of-thumb">Rule of thumb</h3>
+<ul>
+<li><code>deleted</code> usually means a soft-delete or inactive record in report logic</li>
+<li><code>active</code> usually means currently active in business logic</li>
+<li><code>terminated</code> usually means business termination, not necessarily database deletion</li>
+<li>when a table is historical or reporting-oriented, the flag may mean “currently visible in this grain” rather than “this record has been permanently removed”</li>
+</ul>
+<h2 id="role-and-tags-vocabulary">Role and tags vocabulary</h2>
+<h3 id="role-fields">Role fields</h3>
+<p>Common examples:</p>
+<ul>
+<li><code>roles</code></li>
+<li><code>contact roles</code></li>
+<li><code>Named Insured</code></li>
+<li><code>Mortgagee</code></li>
+<li><code>Claimant</code></li>
+<li><code>Agent</code></li>
+<li><code>Agency</code></li>
+</ul>
+<p>Interpretation rule:</p>
+<ul>
+<li>role data is often denormalized into text in the report layer</li>
+<li>the raw relationship tables may hold the actual role assignments separately</li>
+<li>the report view may store these as comma-delimited strings rather than normalized rows</li>
+</ul>
+<h3 id="system-tags">System tags</h3>
+<p>Common examples:</p>
+<ul>
+<li><code>systemTags</code></li>
+<li><code>policySystemTags</code></li>
+<li><code>claimSystemTags</code></li>
+<li><code>questionsSystemTags</code></li>
+</ul>
+<p>Interpretation rule:</p>
+<ul>
+<li>these often behave like a free-form metadata bag</li>
+<li>they are useful for operational filtering but not always clean enough for strict report logic</li>
+<li>do not treat them as canonical master data unless the schema or API docs explicitly say so</li>
+</ul>
+<h2 id="date-and-lifecycle-semantics">Date and lifecycle semantics</h2>
+<h3 id="date-fields-that-matter-most">Date fields that matter most</h3>
+<ul>
+<li><code>dateAdded</code> / <code>date_added</code></li>
+<li><code>dateUpdated</code> / <code>date_updated</code></li>
+<li><code>effectiveDate</code> / <code>term_effective_date</code></li>
+<li><code>expirationDate</code> / <code>term_expiration_date</code></li>
+<li><code>cancelDate</code></li>
+<li><code>dateReported</code></li>
+<li><code>lossDate</code></li>
+<li><code>commitDate</code> / <code>commitDateTime</code></li>
+</ul>
+<p>Interpretation rule:</p>
+<ul>
+<li><code>dateAdded</code> and <code>dateUpdated</code> are operational metadata</li>
+<li><code>effectiveDate</code> and <code>expirationDate</code> are term or coverage lifecycle dates</li>
+<li><code>cancelDate</code> and <code>terminationReason</code> are often historical lifecycle indicators</li>
+<li><code>lossDate</code> and <code>dateReported</code> are claim event dates, not necessarily policy-term dates</li>
+</ul>
+<h2 id="common-status-confusion-patterns">Common status confusion patterns</h2>
+<h3 id="policy-and-revision-confusion">Policy and revision confusion</h3>
+<p>A common mistake is to interpret the latest policy row as the same thing as the current revision or the current term.</p>
+<p>The correct mental model is:</p>
+<ul>
+<li>policy number identifies the policy</li>
+<li>revision captures the term or change iteration</li>
+<li>a policy can have many revisions over time</li>
+</ul>
+<h3 id="claim-confusion">Claim confusion</h3>
+<p>A claim can have many lifecycle and status changes, and the claim table may carry both operational status and historical content. Do not assume a single status field tells the full story.</p>
+<h3 id="contact-confusion">Contact confusion</h3>
+<p>A contact may be active in one context and inactive or terminated in another. A single contact record can carry both role and status information applied across multiple policy or claim relationships.</p>
+<h2 id="recommended-reporting-rule">Recommended reporting rule</h2>
+<p>When you are writing business logic, use this sequence:</p>
+<ol>
+<li>identify the business state you want</li>
+<li>determine whether it is a master-object status or a relationship status</li>
+<li>determine whether it is historical or currently active</li>
+<li>validate against both the raw CSV and the report view before assuming semantics</li>
+</ol>
+<h2 id="short-reference-list">Short reference list</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Typical naming patterns</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Active</td>
+<td><code>active</code>, <code>is_active</code>, <code>active_flag</code></td>
+<td>currently active / enabled</td>
+</tr>
+<tr>
+<td>Deleted</td>
+<td><code>deleted</code>, <code>is_deleted</code></td>
+<td>soft-delete or inactive status</td>
+</tr>
+<tr>
+<td>Terminated</td>
+<td><code>terminated</code>, <code>agent_terminated</code></td>
+<td>business or user termination status</td>
+</tr>
+<tr>
+<td>Cancelled</td>
+<td><code>cancelDate</code>, <code>cancellation_reason</code></td>
+<td>cancellation lifecycle event</td>
+</tr>
+<tr>
+<td>Revision state</td>
+<td><code>revision_state</code>, <code>revisionDate</code></td>
+<td>term/change lifecycle</td>
+</tr>
+<tr>
+<td>Policy status</td>
+<td><code>policy_status</code>, <code>policyStatus</code></td>
+<td>policy lifecycle state</td>
+</tr>
+<tr>
+<td>Claim status</td>
+<td><code>claim_status</code>, <code>status</code></td>
+<td>claim operational state</td>
+</tr>
+<tr>
+<td>Role</td>
+<td><code>roles</code>, <code>role_name</code></td>
+<td>relationship / assigned business role</td>
+</tr>
+<tr>
+<td>Tag</td>
+<td><code>systemTags</code>, <code>claimSystemTags</code></td>
+<td>metadata or categorization label</td>
+</tr>
+<tr>
+<td>Historical</td>
+<td><code>historical</code></td>
+<td>record retained for prior-state context</td>
+</tr>
+</tbody>
+</table>
+<h2 id="good-operational-rule">Good operational rule</h2>
+<p>If a field name looks like a status or tag, always check:</p>
+<ul>
+<li>Is it master-record status or relationship status?</li>
+<li>Is it current-state or historical-state?</li>
+<li>Is it a boolean flag, a text enum, or a denormalized text field?</li>
+</ul>
+<p>That question will usually resolve most of the ambiguity quickly.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

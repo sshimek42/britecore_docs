@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>CSV / API / SQL Mapping - britecore_docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">britecore_docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../architecture/" class="nav-link">Architecture</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../help_center_insights/" class="nav-link">Help Center Insights</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_storage_and_handling/" class="nav-link">Data Storage and Handling</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_lineage_reference/" class="nav-link">Data Lineage Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../entity_relationship_matrix/" class="nav-link">Entity Relationship Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../decision_matrix/" class="nav-link">Decision Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../consolidation_principles/" class="nav-link">Consolidation Principles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../source_of_truth_matrix/" class="nav-link">Source-of-Truth Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">CSV / API / SQL Mapping</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../access_mode_decision_matrix/" class="nav-link">Access Mode Decision Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../bridge_table_guide/" class="nav-link">Bridge Table Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../field_mapping_cheat_sheet/" class="nav-link">Field Mapping Cheat Sheet</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../join_chains_and_lineage/" class="nav-link">Join Chains and Lineage</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../query_quickstarts/" class="nav-link">Query Quickstarts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../status_and_enum_dictionary/" class="nav-link">Status and Enum Dictionary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../relationship_catalog/" class="nav-link">Relationship Catalog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../domain_reference/" class="nav-link">Domain Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../claim_domain_guide/" class="nav-link">Claim Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../policy_domain_guide/" class="nav-link">Policy and Revision Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../contact_domain_guide/" class="nav-link">Contact Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../property_domain_guide/" class="nav-link">Property and Risk Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../payment_domain_guide/" class="nav-link">Payment and Billing Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ai_workflow_guide/" class="nav-link">AI Workflow Guide for Other Repos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../repo_ai_usage_guide/" class="nav-link">Repo-by-Repo AI Usage Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reconciliation_checklist/" class="nav-link">Reconciliation Checklist</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../common_gotchas_and_anti_patterns/" class="nav-link">Common Gotchas and Anti-Patterns</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../record_trace_workflow/" class="nav-link">Record Trace Workflow</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_flow_and_grain_guide/" class="nav-link">Data Flow and Grain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../britecore_status_and_cancellation_semantics/" class="nav-link">BriteCore Status and Cancellation Semantics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../lineage_guide/" class="nav-link">Lineage Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../repo_selection_guide/" class="nav-link">Repo Selection Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../operating_manual/" class="nav-link">Operating Manual</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../onboarding/" class="nav-link">Onboarding</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../quickstarts/" class="nav-link">Quickstarts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../source_registry/" class="nav-link">Source Registry</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../project_map/" class="nav-link">Project Map</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ingestion_workflow/" class="nav-link">Ingestion Workflow</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Integrations</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../integrations/reporting_stack/" class="dropdown-item">Reporting Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Reporting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../reporting/logical_layer/" class="dropdown-item">Logical Layer</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/join_starters/" class="dropdown-item">Join Starters</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/reporting_playbook/" class="dropdown-item">Reporting Playbook</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/sql_reporting_cookbook/" class="dropdown-item">SQL Reporting Cookbook</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/report_metadata_examples/" class="dropdown-item">Report Metadata Examples</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/field_discovery_checklist/" class="dropdown-item">Field Discovery Checklist</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../projects/britecore_mcp/" class="dropdown-item">britecore_mcp</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_sql_reports/" class="dropdown-item">britecore_sql_reports</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_sdk/" class="dropdown-item">britecore_sdk</a>
+</li>
+                                    
+<li>
+    <a href="../projects/policy_reporting/" class="dropdown-item">PolicyReporting</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_csv_loader/" class="dropdown-item">britecore_csv_loader</a>
+</li>
+                                    
+<li>
+    <a href="../projects/policy_data_warehouse/" class="dropdown-item">policy-data-warehouse</a>
+</li>
+                                    
+<li>
+    <a href="../projects/naic/" class="dropdown-item">NAIC</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../source_of_truth_matrix/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../access_mode_decision_matrix/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#csv-api-sql-mapping-overview" class="nav-link">CSV / API / SQL Mapping Overview</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#high-level-mapping-pattern" class="nav-link">High-level mapping pattern</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#important-operational-reality" class="nav-link">Important operational reality</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-practical-rule" class="nav-link">The practical rule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#field-naming-pattern-api-and-sql-are-usually-closer-to-each-other-than-csv-is" class="nav-link">Field naming pattern: API and SQL are usually closer to each other than CSV is</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#csv-files-are-often-intentionally-split-by-concern" class="nav-link">CSV files are often intentionally split by concern</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#contacts-example" class="nav-link">Contacts example</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#why-this-matters" class="nav-link">Why this matters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#recommended-documentation-rule" class="nav-link">Recommended documentation rule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#important-exception" class="nav-link">Important exception</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#short-version" class="nav-link">Short version</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="csv-api-sql-mapping-overview">CSV / API / SQL Mapping Overview</h1>
+<p>This page captures the observed mapping pattern across the BriteCore stack:</p>
+<ul>
+<li>raw CSV names are usually close to the underlying entity names</li>
+<li>the API returns a nested JSON object for that entity</li>
+<li>the SQL/report layer is often a denormalized, flattened presentation of the same business object</li>
+</ul>
+<h2 id="high-level-mapping-pattern">High-level mapping pattern</h2>
+<pre><code class="language-text">Raw CSV file              -&gt; base entity / raw-source view
+Contacts.csv              -&gt; contact universe / contact entity
+Revisions.csv             -&gt; revision history / revision entity
+Claims.csv                -&gt; claim master records
+Properties.csv            -&gt; property records
+...
+
+API response object       -&gt; nested entity payload
+SQL report / v_* view     -&gt; flattened reporting projection
+</code></pre>
+<h2 id="important-operational-reality">Important operational reality</h2>
+<p>These are not a strict dependency chain that must always be used together.</p>
+<p>A team may legitimately work with:</p>
+<ul>
+<li>only the raw CSV exports</li>
+<li>only the API payloads</li>
+<li>only the SQL/report views</li>
+<li>or some combination of the three</li>
+</ul>
+<p>The real question is not “which one is the true source?” but rather:</p>
+<ul>
+<li>what do I have access to?</li>
+<li>how much shape and aggregation do I want the system to do for me?</li>
+<li>am I looking for raw facts, nested domain objects, or a report-ready projection?</li>
+</ul>
+<p>In practical terms:</p>
+<ul>
+<li>CSV is best when you want point-in-time stored export data and offline access to a specific extraction set</li>
+<li>API is best when you want real-time or near-real-time access to a structured object model, and the SDK wrappers show the exact parameters and ids needed to walk the object graph</li>
+<li>SQL/reporting is best when you want a preformatted, query-friendly layer that is easy to build reports from</li>
+</ul>
+<p>In many basic cases, a direct SQL query from the website is also the easiest path because the reporting layer already contains the flattened joins and common business fields. This can be much simpler than reconstructing the same answer from several CSV exports or a long sequence of API calls.</p>
+<p>In other words, the three layers are parallel access modes, not a mandatory pipeline. The SDK API docs are especially valuable for mapping chains because the wrapper signatures make the request and ID flow explicit.</p>
+<p>This same pattern is not limited to claims, contacts, and policies. The v2 modules under <code>src/britecore_sdk/api/api_calls/v2/</code> all follow a consistent resource contract: list/search by parent or scope, get/retrieve by id or stable key, create/update/delete by payload, and relationship-specific calls for the attached collections. Examples include <code>files.py</code>, <code>drivers.py</code>, <code>vehicles.py</code>, <code>claims.py</code>, and <code>policies.py</code>.</p>
+<h2 id="the-practical-rule">The practical rule</h2>
+<p>For many BriteCore entities, the base CSV filename maps closely to the logical SQL table/view name.</p>
+<p>Examples:</p>
+<ul>
+<li><code>Contacts.csv</code> ≈ <code>v_contacts</code></li>
+<li><code>Revisions.csv</code> ≈ <code>v_revisions</code></li>
+<li><code>Claims.csv</code> ≈ <code>v_claims</code></li>
+</ul>
+<p>This is not always a literal one-to-one match for bridge or relationship views, but it is a strong rule for the base entity tables.</p>
+<h2 id="field-naming-pattern-api-and-sql-are-usually-closer-to-each-other-than-csv-is">Field naming pattern: API and SQL are usually closer to each other than CSV is</h2>
+<p>A very strong practical pattern is that the SQL/report field names and the API object keys usually align more closely than either does with the raw CSV column names.</p>
+<p>Examples:</p>
+<ul>
+<li>CSV: <code>contactId</code></li>
+<li>API: <code>id</code></li>
+<li>
+<p>SQL: <code>contact_id</code></p>
+</li>
+<li>
+<p>CSV: <code>policyNumber</code></p>
+</li>
+<li>API: <code>policy_number</code></li>
+<li>
+<p>SQL: <code>policy_number</code></p>
+</li>
+<li>
+<p>CSV: <code>claimNumber</code></p>
+</li>
+<li>API: <code>claim_number</code></li>
+<li>
+<p>SQL: <code>claim_number</code></p>
+</li>
+<li>
+<p>CSV: <code>revisionId</code></p>
+</li>
+<li>API: <code>revision_id</code></li>
+<li>SQL: <code>revision_id</code></li>
+</ul>
+<p>The CSV layer usually preserves the export naming pattern and field formatting from the source system, while the API and report layer tend to normalize to a more stable snake_case / logical-view naming convention.</p>
+<h2 id="csv-files-are-often-intentionally-split-by-concern">CSV files are often intentionally split by concern</h2>
+<p>The CSV export pattern is similar to the API pattern, but more fragmented. The raw export tends to separate the master record from the related detail tables rather than nesting everything into one payload.</p>
+<p>Examples from <code>C:\PythonProjects\data\britecore-csv-loader\data\mow\raw</code> show this clearly:</p>
+<ul>
+<li><code>claims.csv</code> contains the master claim record</li>
+<li><code>claims_contacts.csv</code> contains many-to-many claim-to-contact linkage</li>
+<li><code>claims_payments.csv</code> contains claim payment records</li>
+<li><code>claims_payments_item_amounts.csv</code> contains the line-item detail for each payment</li>
+<li><code>policies.csv</code> contains the policy master record</li>
+<li><code>policy_terms.csv</code> contains the term/revision-specific information</li>
+<li><code>addresses.csv</code>, <code>phones.csv</code>, <code>emails.csv</code>, and <code>mortgagees.csv</code> split out child objects that the API may return as nested arrays</li>
+<li><code>item_questions.csv</code> and <code>builder_obj_parsed.csv</code> show sub-entity and form-detail data separated out further</li>
+</ul>
+<p>That is the key difference from the API layer: CSVs are often more normalized and more spread across multiple files, so reconstructing a single business record can take more joins or chained lookups than a single API call.</p>
+<h2 id="contacts-example">Contacts example</h2>
+<p>The raw CSV <code>contacts.csv</code> contains the direct entity fields and the row looks like a contact master record:</p>
+<pre><code class="language-text">contactId: 00025e4c-af2e-4a1e-bdc6-3808ae83e7ce
+name: Kelly Sobojinski
+type: individual
+username: ...
+website: ...
+terminationReason: ...
+</code></pre>
+<p>The API payload for the same contact is a nested object rather than a flat row:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;00025e4c-af2e-4a1e-bdc6-3808ae83e7ce&quot;,
+  &quot;name&quot;: &quot;Kelly Sobojinski&quot;,
+  &quot;type&quot;: &quot;individual&quot;,
+  &quot;addresses&quot;: [{ &quot;city&quot;: &quot;Oshkosh&quot;, &quot;state&quot;: &quot;WI&quot;, &quot;zipcode&quot;: &quot;54904&quot; }],
+  &quot;phones&quot;: [{ &quot;phone&quot;: &quot;1-920-216-2355&quot;, &quot;type&quot;: &quot;Home&quot; }],
+  &quot;roles&quot;: [{ &quot;name&quot;: &quot;Named Insured&quot; }]
+}
+</code></pre>
+<p>The SQL report output is then flattened into a denormalized reporting row:</p>
+<pre><code class="language-text">contact_id = 00025e4c-af2e-4a1e-bdc6-3808ae83e7ce
+contact_name = Kelly Sobojinski
+contact_type = individual
+address_city = Oshkosh
+address_state = WI
+address_zip = 54904
+primary_phone = 1-920-216-2355
+roles = Named Insured
+</code></pre>
+<p>This pattern matters because it explains why the same record appears in three forms:</p>
+<ol>
+<li>raw CSV: a base entity record with direct fields</li>
+<li>API: nested resource object with arrays and child objects</li>
+<li>SQL/report: flattened, business-facing projection of the entity plus common related fields</li>
+</ol>
+<h2 id="why-this-matters">Why this matters</h2>
+<p>If you assume the API object is the same shape as the CSV row, you will miss the denormalization and nesting that happens in the API contract. If you assume the report view is the same as the raw CSV, you will miss the flattening and enrichment that happens in SQL/reporting.</p>
+<h2 id="recommended-documentation-rule">Recommended documentation rule</h2>
+<p>A good working rule is:</p>
+<ul>
+<li>raw CSV ≈ base entity shape</li>
+<li>API ≈ nested domain object</li>
+<li>SQL report / <code>v_*</code> view ≈ flattened business projection</li>
+</ul>
+<p>For entity-level work such as <code>contacts</code>, <code>claims</code>, <code>policies</code>, <code>properties</code>, and similar, the CSV name is often the best first clue to the logical table/view name.</p>
+<h2 id="important-exception">Important exception</h2>
+<p>Relationship or bridge tables may not correspond 1:1 to a CSV file. For example:</p>
+<ul>
+<li><code>v_claims_contacts</code> is a bridge relationship view</li>
+<li><code>v_revisions_contacts</code> is a bridge relationship view</li>
+</ul>
+<p>Those are not necessarily raw CSV files. They are created to make many-to-many or join semantics tractable in reporting.</p>
+<h2 id="short-version">Short version</h2>
+<p>Base entity CSVs are usually close to the <code>v_*</code> report tables. The API adds nesting, and the report layer flattens and enriches the entity for consumption.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

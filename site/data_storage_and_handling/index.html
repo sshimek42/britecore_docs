@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Data Storage and Handling - britecore_docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">britecore_docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../architecture/" class="nav-link">Architecture</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../help_center_insights/" class="nav-link">Help Center Insights</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Data Storage and Handling</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_lineage_reference/" class="nav-link">Data Lineage Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../entity_relationship_matrix/" class="nav-link">Entity Relationship Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../decision_matrix/" class="nav-link">Decision Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../consolidation_principles/" class="nav-link">Consolidation Principles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../source_of_truth_matrix/" class="nav-link">Source-of-Truth Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../csv_api_sql_mapping/" class="nav-link">CSV / API / SQL Mapping</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../access_mode_decision_matrix/" class="nav-link">Access Mode Decision Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../bridge_table_guide/" class="nav-link">Bridge Table Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../field_mapping_cheat_sheet/" class="nav-link">Field Mapping Cheat Sheet</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../join_chains_and_lineage/" class="nav-link">Join Chains and Lineage</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../query_quickstarts/" class="nav-link">Query Quickstarts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../status_and_enum_dictionary/" class="nav-link">Status and Enum Dictionary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../relationship_catalog/" class="nav-link">Relationship Catalog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../domain_reference/" class="nav-link">Domain Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../claim_domain_guide/" class="nav-link">Claim Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../policy_domain_guide/" class="nav-link">Policy and Revision Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../contact_domain_guide/" class="nav-link">Contact Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../property_domain_guide/" class="nav-link">Property and Risk Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../payment_domain_guide/" class="nav-link">Payment and Billing Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ai_workflow_guide/" class="nav-link">AI Workflow Guide for Other Repos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../repo_ai_usage_guide/" class="nav-link">Repo-by-Repo AI Usage Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reconciliation_checklist/" class="nav-link">Reconciliation Checklist</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../common_gotchas_and_anti_patterns/" class="nav-link">Common Gotchas and Anti-Patterns</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../record_trace_workflow/" class="nav-link">Record Trace Workflow</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_flow_and_grain_guide/" class="nav-link">Data Flow and Grain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../britecore_status_and_cancellation_semantics/" class="nav-link">BriteCore Status and Cancellation Semantics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../lineage_guide/" class="nav-link">Lineage Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../repo_selection_guide/" class="nav-link">Repo Selection Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../operating_manual/" class="nav-link">Operating Manual</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../onboarding/" class="nav-link">Onboarding</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../quickstarts/" class="nav-link">Quickstarts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../source_registry/" class="nav-link">Source Registry</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../project_map/" class="nav-link">Project Map</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ingestion_workflow/" class="nav-link">Ingestion Workflow</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Integrations</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../integrations/reporting_stack/" class="dropdown-item">Reporting Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Reporting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../reporting/logical_layer/" class="dropdown-item">Logical Layer</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/join_starters/" class="dropdown-item">Join Starters</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/reporting_playbook/" class="dropdown-item">Reporting Playbook</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/sql_reporting_cookbook/" class="dropdown-item">SQL Reporting Cookbook</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/report_metadata_examples/" class="dropdown-item">Report Metadata Examples</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/field_discovery_checklist/" class="dropdown-item">Field Discovery Checklist</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../projects/britecore_mcp/" class="dropdown-item">britecore_mcp</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_sql_reports/" class="dropdown-item">britecore_sql_reports</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_sdk/" class="dropdown-item">britecore_sdk</a>
+</li>
+                                    
+<li>
+    <a href="../projects/policy_reporting/" class="dropdown-item">PolicyReporting</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_csv_loader/" class="dropdown-item">britecore_csv_loader</a>
+</li>
+                                    
+<li>
+    <a href="../projects/policy_data_warehouse/" class="dropdown-item">policy-data-warehouse</a>
+</li>
+                                    
+<li>
+    <a href="../projects/naic/" class="dropdown-item">NAIC</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../help_center_insights/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../data_lineage_reference/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#britecore-data-storage-and-handling" class="nav-link">BriteCore Data Storage and Handling</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#executive-summary" class="nav-link">Executive summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-source-of-truth-model-by-access-surface" class="nav-link">1) Source-of-truth model by access surface</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-the-data-flow-as-a-practical-end-to-end-pipeline" class="nav-link">2) The data flow as a practical end-to-end pipeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-what-the-repo-evidence-says-about-actual-storage-patterns" class="nav-link">3) What the repo evidence says about actual storage patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-important-insights-discovered" class="nav-link">4) Important insights discovered</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-suggested-canonical-reading-order-for-a-detailed-data-model-study" class="nav-link">5) Suggested canonical reading order for a detailed data-model study</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-best-working-mental-model" class="nav-link">6) Best working mental model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-recommended-next-doc-to-generate" class="nav-link">7) Recommended next doc to generate</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="britecore-data-storage-and-handling">BriteCore Data Storage and Handling</h1>
+<p>This page summarizes how BriteCore data moves between the live API, the logical discovery layer, the SQL reporting project, and the raw CSV export model. It is a cross-project synthesis of the local source repos and should be read as a practical architecture summary, not as a replacement for the canonical implementation docs in each repo.</p>
+<h2 id="executive-summary">Executive summary</h2>
+<p>The local ecosystem suggests a layered model rather than a single monolithic store:</p>
+<ol>
+<li>The live BriteCore application stores and serves operational data through the API and report execution layer.</li>
+<li>The logical discovery layer (<code>britecore_mcp</code>) exposes report metadata, <code>m_*</code>/<code>v_*</code> discovery, and join guidance.</li>
+<li>The SQL reporting project (<code>britecore_sql_reports</code>) owns the report SQL definitions, report-table docs, and reusable report assets.</li>
+<li>The raw export layer extracts CSV snapshots from the same underlying domain and organizes them around keys such as <code>policyId</code>, <code>revisionId</code>, <code>claimId</code>, <code>itemId</code>, <code>contactId</code>, and <code>propertyId</code>.</li>
+<li>The service layer (<code>PolicyReporting</code>) normalizes multiple inputs into a more query-friendly model for cross-source reporting.</li>
+</ol>
+<p>The important design insight is that these are not competing copies of the same data. They are different access surfaces over the same business domain, each with a different purpose, grain, and update rhythm.</p>
+<h2 id="1-source-of-truth-model-by-access-surface">1) Source-of-truth model by access surface</h2>
+<h3 id="a-live-api-layer">A. Live API layer</h3>
+<p>Canonical repo: <code>britecore_sdk</code></p>
+<p>This is the API-first access layer. It is responsible for:</p>
+<ul>
+<li>authenticated access to BriteCore endpoints</li>
+<li>configuration and environment-based connection management</li>
+<li>Python client wrappers for operational or reporting calls</li>
+<li>live retrieval of data from the BriteCore service</li>
+</ul>
+<p>The SDK is not the same thing as the reporting catalog. It gives you access to the system as a live API surface, which means:</p>
+<ul>
+<li>you can query operational endpoints and report definitions</li>
+<li>you can retrieve metadata about SQL reports and their tokens</li>
+<li>you can integrate automation or validation scripts against the live system</li>
+</ul>
+<p>According to <code>britecore_mcp</code> docs, this is also how report metadata can be discovered programmatically:</p>
+<ul>
+<li><code>retrieve_sql_reports()</code> lists report definitions</li>
+<li><code>retrieve_report(report_id=...)</code> fetches the report payload and tokens</li>
+<li>the raw payload exposes report parameters such as <code>StartDate</code>, <code>EndDate</code>, and other SQL runner inputs</li>
+</ul>
+<p>This matters because the built-in SQL reporting layer is not just a database view; it is also a report metadata system with execution parameters and report definitions.</p>
+<h3 id="b-built-in-sql-reporting-layer">B. Built-in SQL reporting layer</h3>
+<p>Canonical repos: <code>britecore_mcp</code>, <code>britecore_sql_reports</code>, <code>PolicyReporting</code></p>
+<p>The built-in SQL/reporting layer is best understood through the logical catalog model:</p>
+<ul>
+<li><code>m_*</code> views are usually fact-heavy, time- or balance-oriented structures</li>
+<li><code>v_*</code> views are usually dimensions, bridges, lookups, and enrichment views</li>
+<li><code>v_logical_catalog</code> is the best starting point for discovering this layer</li>
+</ul>
+<p>The <code>britecore_mcp</code> docs explicitly say the logical layer is the primary discovery mechanism and that the practical reporting model is facts vs dimensions. The SQL reporting project then carries the reusable report definitions and report-writing assets. Together, they form the SQL/reporting story without forcing MCP to own every report artifact.</p>
+<p>The logic is:</p>
+<ul>
+<li>identify the business object and grain</li>
+<li>start with the fact table that matches the business measure</li>
+<li>enrich with dimension views only as needed</li>
+<li>validate row counts and distinct keys to avoid fan-out</li>
+</ul>
+<p>This is a curated, analytical surface, not the same as the raw transaction tables in a normalized relational model.</p>
+<h3 id="c-csv-export-raw-relationship-layer">C. CSV export / raw relationship layer</h3>
+<p>Canonical repo: <code>britecore-csv-loader</code></p>
+<p>The raw export model is the clearest example of how BriteCore data is shaped for downstream reconstruction and analysis. The key document, <code>CSV_RELATIONSHIPS_OVERVIEW.md</code>, makes several critical observations:</p>
+<ul>
+<li>the export model is policy-centric but operationally revision-centric</li>
+<li>the most reused keys are <code>revisionId</code>, <code>policyId</code>, <code>claimId</code>, <code>itemId</code>, <code>contactId</code>, and <code>propertyId</code></li>
+<li>multiple raw CSVs join through these IDs rather than a single normalized relational PK/FK model</li>
+<li><code>revisions.csv</code> acts as an anchor for a large portion of the policy and item lineage</li>
+</ul>
+<p>This implies that the exported CSV data is not merely a flat dump; it is a reconstruction of business relationships across policy, claim, property, item, and contact objects.</p>
+<p>The raw export view is especially useful for:</p>
+<ul>
+<li>tracing policy lineage across revisions</li>
+<li>validating row grain assumptions before joining report tables</li>
+<li>reconstructing the object graph behind a claim or policy snapshot</li>
+<li>comparing raw export relationships to the logical reporting layer</li>
+</ul>
+<h3 id="d-service-layer-normalization-policyreporting">D. Service-layer normalization (<code>PolicyReporting</code>)</h3>
+<p>Canonical repo: <code>PolicyReporting</code></p>
+<p>This project sits above the raw source interfaces and provides a reporting-oriented service boundary. The README describes a stack of:</p>
+<ul>
+<li>raw parsers</li>
+<li>source interfaces</li>
+<li>DAL layer</li>
+<li>service layer</li>
+<li>future output renderers / API layer / UI</li>
+</ul>
+<p>This is a very important architectural clue: BriteCore data is not consumed only through one final query layer. Instead, data is staged and normalized across several layers:</p>
+<ul>
+<li>raw source files or exports are landed into <code>raw.*</code> tables</li>
+<li>normalized data is loaded into <code>core.*</code> tables</li>
+<li>reporting views are built in <code>reporting.*</code></li>
+<li>service logic assembles higher-level cross-source answer sets</li>
+</ul>
+<p>This is the clearest evidence that the system is intentionally layered for performance, normalization, and reporting flexibility.</p>
+<h2 id="2-the-data-flow-as-a-practical-end-to-end-pipeline">2) The data flow as a practical end-to-end pipeline</h2>
+<p>A likely end-to-end model looks like this:</p>
+<pre><code class="language-text">BriteCore operational system
+        |
+        +--&gt; API endpoints / report definitions (via britecore_sdk)
+        |
+        +--&gt; SQL report runners / logical reporting layer (via britecore_mcp + britecore_sql_reports + v_logical_catalog)
+        |
+        +--&gt; CSV exports and raw relationship snapshots (via britecore-csv-loader)
+        |
+        +--&gt; Cross-source service assembly (via PolicyReporting)
+</code></pre>
+<p>More concretely:</p>
+<pre><code class="language-text">Operational BriteCore data
+    -&gt; API access / live retrieval
+    -&gt; report definition discovery and execution
+    -&gt; logical views (`m_*`, `v_*`)
+    -&gt; raw CSV snapshots keyed by revision/policy/claim/item/contact ids
+    -&gt; normalized SQL loading into core/reporting schemas
+    -&gt; cross-source reporting/service output
+</code></pre>
+<h2 id="3-what-the-repo-evidence-says-about-actual-storage-patterns">3) What the repo evidence says about actual storage patterns</h2>
+<h3 id="key-evidence-from-britecore-csv-loader">Key evidence from <code>britecore-csv-loader</code></h3>
+<p>The raw CSV relationship overview identifies the dominant relationship model:</p>
+<ul>
+<li><code>revisionId</code> is the highest-value link field across many datasets</li>
+<li><code>policyId</code> is the primary policy anchor</li>
+<li><code>claimId</code> threads claim-related data together</li>
+<li><code>itemId</code> and <code>propertyId</code> connect coverage and risk details</li>
+<li><code>contactId</code> connects contact and party relationships</li>
+</ul>
+<p>This suggests that BriteCore data is heavily modeled around revisioned, object-linked snapshots rather than a simple warehouse-style star schema. The raw export layer is not a direct physical database mirror; it is a practical flattened relational reconstruction of business entities and links.</p>
+<h3 id="key-evidence-from-britecore_mcp">Key evidence from <code>britecore_mcp</code></h3>
+<p>The docs across <code>britecore_mcp</code> and <code>britecore_sql_reports</code> make the reporting model explicit:</p>
+<ul>
+<li><code>m_*</code> objects are usually fact tables</li>
+<li><code>v_*</code> objects are usually dimensions, lookup tables, and bridges</li>
+<li>the target grain should be identified before joins</li>
+<li><code>v_logical_catalog</code> is the authoritative discovery surface</li>
+</ul>
+<p>This is a strong signal that the SQL/reporting stack is intentionally curated and semantic, not just raw storage.</p>
+<h3 id="key-evidence-from-policyreporting">Key evidence from <code>PolicyReporting</code></h3>
+<p>The project separates raw landing, core schema load, and reporting views:</p>
+<ul>
+<li><code>raw.*</code> is for landing source datasets</li>
+<li><code>core.*</code> is for normalized canonical source data</li>
+<li><code>reporting.*</code> contains final reporting views</li>
+</ul>
+<p>This is the clearest representation of a staged data pipeline. It says the service reporting layer is designed around explicit transformation stages rather than direct ad hoc queries over live source exports.</p>
+<h2 id="4-important-insights-discovered">4) Important insights discovered</h2>
+<h3 id="insight-1-the-reporting-layer-is-intentionally-semantic-not-just-raw-storage">Insight 1: The reporting layer is intentionally semantic, not just raw storage</h3>
+<p>The logical layer is not meant to be direct physical storage. It is a curated reporting abstraction designed around facts and dimensions. This explains why there are so many <code>v_*</code> views and why <code>v_logical_catalog</code> is central.</p>
+<h3 id="insight-2-revision-is-the-central-organizing-concept-in-the-raw-model">Insight 2: Revision is the central organizing concept in the raw model</h3>
+<p>The CSV export analysis makes <code>revisionId</code> the dominant key across many datasets. This suggests that policy and claim event history are organized around revision timelines and revision-scoped entity snapshots. In other words, the raw data is highly time-aware and event-driven.</p>
+<h3 id="insight-3-the-system-is-layered-by-purpose-not-by-a-single-schema">Insight 3: The system is layered by purpose, not by a single schema</h3>
+<p>The data flow looks like this:</p>
+<ul>
+<li>operational / API layer</li>
+<li>reporting layer / logical catalog</li>
+<li>raw export reconstruction layer</li>
+<li>service normalization layer</li>
+</ul>
+<p>Each layer answers a different question and uses a different grain. The challenge is not to force them into a single schema; it is to understand when each layer should be used.</p>
+<h3 id="insight-4-join-fan-out-is-a-major-risk-area">Insight 4: Join fan-out is a major risk area</h3>
+<p><code>britecore_mcp</code> explicitly warns about grain and join fan-out. This is especially important when working with revision, claim, contact, and policy relationship tables. A raw export or logical view may look valid in isolation but become incorrect when joined too aggressively.</p>
+<h3 id="insight-5-csvs-are-a-reconstruction-surface-not-a-lesser-copy">Insight 5: CSVs are a reconstruction surface, not a “lesser” copy</h3>
+<p>The raw CSV model is essential for lineage validation and for understanding how relationships are assembled in practice. It should not be dismissed as just a dump. It is often the best place to validate the assumptions behind the curated reporting layer.</p>
+<h2 id="5-suggested-canonical-reading-order-for-a-detailed-data-model-study">5) Suggested canonical reading order for a detailed data-model study</h2>
+<p>If the goal is to document BriteCore data handling end-to-end, this is the order I would use:</p>
+<ol>
+<li><code>britecore_sdk</code> architecture and API docs</li>
+<li>for the live system access layer</li>
+<li><code>britecore_mcp</code> logical catalog docs</li>
+<li>for the reporting semantics and fact-vs-dimension model</li>
+<li><code>britecore_sql_reports</code> report-table framework and report docs</li>
+<li>for report SQL definitions and worked reporting examples</li>
+<li><code>britecore-csv-loader</code> <code>CSV_RELATIONSHIPS_OVERVIEW.md</code></li>
+<li>for the raw relationship model and worked examples</li>
+<li><code>PolicyReporting</code> README</li>
+<li>for the layered raw/core/reporting service model</li>
+<li>This doc, plus any final cross-project narrative summary</li>
+</ol>
+<h2 id="6-best-working-mental-model">6) Best working mental model</h2>
+<p>A useful summary model is:</p>
+<ul>
+<li>API access = live operational access</li>
+<li>logical reporting = curated analytics surface</li>
+<li>CSV exports = raw relationship reconstruction layer</li>
+<li>SQL loading/service layer = normalized staging and reporting service boundary</li>
+</ul>
+<p>When these are viewed together, the BriteCore data architecture looks less like a single schema and more like a deliberately layered domain model built to serve both analyst exploration and operational reporting.</p>
+<h2 id="7-recommended-next-doc-to-generate">7) Recommended next doc to generate</h2>
+<p>The next high-value document to add would be a dedicated “BriteCore data lineage map” that ties together:</p>
+<ul>
+<li>key entities (<code>policy</code>, <code>revision</code>, <code>claim</code>, <code>item</code>, <code>contact</code>, <code>property</code>)</li>
+<li>the primary keys used in each layer</li>
+<li>the common join paths used in the raw CSV layer</li>
+<li>the reporting views used in the logical layer</li>
+<li>the normalized stages used in <code>PolicyReporting</code></li>
+</ul>
+<p>That would turn this summary into a complete cross-project lineage guide.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

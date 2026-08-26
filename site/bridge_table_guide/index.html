@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Bridge Table Guide - britecore_docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">britecore_docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../architecture/" class="nav-link">Architecture</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../help_center_insights/" class="nav-link">Help Center Insights</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_storage_and_handling/" class="nav-link">Data Storage and Handling</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_lineage_reference/" class="nav-link">Data Lineage Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../entity_relationship_matrix/" class="nav-link">Entity Relationship Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../glossary/" class="nav-link">Glossary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../decision_matrix/" class="nav-link">Decision Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../consolidation_principles/" class="nav-link">Consolidation Principles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../source_of_truth_matrix/" class="nav-link">Source-of-Truth Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../csv_api_sql_mapping/" class="nav-link">CSV / API / SQL Mapping</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../access_mode_decision_matrix/" class="nav-link">Access Mode Decision Matrix</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Bridge Table Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../field_mapping_cheat_sheet/" class="nav-link">Field Mapping Cheat Sheet</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../join_chains_and_lineage/" class="nav-link">Join Chains and Lineage</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../query_quickstarts/" class="nav-link">Query Quickstarts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../status_and_enum_dictionary/" class="nav-link">Status and Enum Dictionary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../relationship_catalog/" class="nav-link">Relationship Catalog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../domain_reference/" class="nav-link">Domain Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../claim_domain_guide/" class="nav-link">Claim Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../policy_domain_guide/" class="nav-link">Policy and Revision Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../contact_domain_guide/" class="nav-link">Contact Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../property_domain_guide/" class="nav-link">Property and Risk Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../payment_domain_guide/" class="nav-link">Payment and Billing Domain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ai_workflow_guide/" class="nav-link">AI Workflow Guide for Other Repos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../repo_ai_usage_guide/" class="nav-link">Repo-by-Repo AI Usage Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reconciliation_checklist/" class="nav-link">Reconciliation Checklist</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../common_gotchas_and_anti_patterns/" class="nav-link">Common Gotchas and Anti-Patterns</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../record_trace_workflow/" class="nav-link">Record Trace Workflow</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data_flow_and_grain_guide/" class="nav-link">Data Flow and Grain Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../britecore_status_and_cancellation_semantics/" class="nav-link">BriteCore Status and Cancellation Semantics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../lineage_guide/" class="nav-link">Lineage Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../repo_selection_guide/" class="nav-link">Repo Selection Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../operating_manual/" class="nav-link">Operating Manual</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../onboarding/" class="nav-link">Onboarding</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../quickstarts/" class="nav-link">Quickstarts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../source_registry/" class="nav-link">Source Registry</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../project_map/" class="nav-link">Project Map</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ingestion_workflow/" class="nav-link">Ingestion Workflow</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Integrations</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../integrations/reporting_stack/" class="dropdown-item">Reporting Stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Reporting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../reporting/logical_layer/" class="dropdown-item">Logical Layer</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/join_starters/" class="dropdown-item">Join Starters</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/reporting_playbook/" class="dropdown-item">Reporting Playbook</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/sql_reporting_cookbook/" class="dropdown-item">SQL Reporting Cookbook</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/report_metadata_examples/" class="dropdown-item">Report Metadata Examples</a>
+</li>
+                                    
+<li>
+    <a href="../reporting/field_discovery_checklist/" class="dropdown-item">Field Discovery Checklist</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../projects/britecore_mcp/" class="dropdown-item">britecore_mcp</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_sql_reports/" class="dropdown-item">britecore_sql_reports</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_sdk/" class="dropdown-item">britecore_sdk</a>
+</li>
+                                    
+<li>
+    <a href="../projects/policy_reporting/" class="dropdown-item">PolicyReporting</a>
+</li>
+                                    
+<li>
+    <a href="../projects/britecore_csv_loader/" class="dropdown-item">britecore_csv_loader</a>
+</li>
+                                    
+<li>
+    <a href="../projects/policy_data_warehouse/" class="dropdown-item">policy-data-warehouse</a>
+</li>
+                                    
+<li>
+    <a href="../projects/naic/" class="dropdown-item">NAIC</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../access_mode_decision_matrix/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../field_mapping_cheat_sheet/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#bridge-table-guide" class="nav-link">Bridge Table Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#why-bridge-tables-exist" class="nav-link">Why bridge tables exist</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#base-tables-vs-bridge-tables" class="nav-link">Base tables vs bridge tables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#common-pattern-in-the-britecore-schema" class="nav-link">Common pattern in the BriteCore schema</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#why-bridge-rows-multiply" class="nav-link">Why bridge rows multiply</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#practical-examples" class="nav-link">Practical examples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#csv-analog" class="nav-link">CSV analog</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#how-to-work-with-bridge-tables-safely" class="nav-link">How to work with bridge tables safely</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#quick-rule-of-thumb" class="nav-link">Quick rule of thumb</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#common-gotchas" class="nav-link">Common gotchas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#recommended-documentation-principle" class="nav-link">Recommended documentation principle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="bridge-table-guide">Bridge Table Guide</h1>
+<p>This page explains the difference between base entity tables and bridge tables in the BriteCore reporting and API ecosystem.</p>
+<h2 id="why-bridge-tables-exist">Why bridge tables exist</h2>
+<p>Many BriteCore relationships are not one-to-one. A policy may have many contacts, a claim may have many claimants and adjusters, and a revision may be linked to several agencies or secondary parties.</p>
+<p>When the same record can appear under more than one related object, the reporting layer usually splits that relationship into a bridge table or relationship view.</p>
+<p>The same pattern appears in both reporting SQL and CSV export logic:</p>
+<ul>
+<li>base tables hold the main entity record</li>
+<li>bridge tables hold the linkage rows</li>
+<li>each bridge row usually represents one relationship instance</li>
+</ul>
+<p>This is why a direct join from a master table can sometimes look too small or too broad: the relationship itself has its own grain.</p>
+<h2 id="base-tables-vs-bridge-tables">Base tables vs bridge tables</h2>
+<h3 id="base-tables">Base tables</h3>
+<p>Base tables are the primary record holders.</p>
+<p>Examples:</p>
+<ul>
+<li><code>v_contacts</code></li>
+<li><code>v_claims</code></li>
+<li><code>v_policies</code> or <code>v_revisions</code></li>
+<li><code>v_properties</code></li>
+</ul>
+<p>These tables usually represent one row per core business object.</p>
+<p>A base table often has a primary entity id such as:</p>
+<ul>
+<li><code>contact_id</code></li>
+<li><code>claim_id</code></li>
+<li><code>revision_id</code></li>
+<li><code>property_id</code></li>
+</ul>
+<h3 id="bridge-tables">Bridge tables</h3>
+<p>Bridge tables hold the many-to-many or one-to-many relationship rows.</p>
+<p>Examples:</p>
+<ul>
+<li><code>v_claims_contacts</code></li>
+<li><code>v_revisions_contacts</code></li>
+<li><code>v_revisions_agencies</code></li>
+<li><code>v_claims_payments</code></li>
+</ul>
+<p>These tables usually do not represent a new object in the same way as a base entity. Instead, they connect two objects together and often repeat the parent id on multiple rows.</p>
+<p>Typical key pattern:</p>
+<ul>
+<li><code>claim_id</code> + <code>contact_id</code></li>
+<li><code>revision_id</code> + <code>contact_id</code></li>
+<li><code>revision_id</code> + <code>agency_id</code></li>
+</ul>
+<p>That means a bridge table can have multiple rows for the same base entity if it has multiple related records.</p>
+<h2 id="common-pattern-in-the-britecore-schema">Common pattern in the BriteCore schema</h2>
+<p>The dominant pattern is:</p>
+<ol>
+<li>find the master entity id</li>
+<li>use that id to join into the bridge relationship table</li>
+<li>then join from the bridge table to the related entity table</li>
+</ol>
+<p>Example:</p>
+<pre><code class="language-sql">SELECT c.claim_id, c.claim_number, cc.contact_id, ct.contact_name
+FROM v_claims c
+LEFT JOIN v_claims_contacts cc
+  ON c.claim_id = cc.claim_id
+LEFT JOIN v_contacts ct
+  ON cc.contact_id = ct.contact_id
+WHERE c.claim_number = 'YOUR_CLAIM_NUMBER';
+</code></pre>
+<p>This is normal and expected. A claim can have many related contacts, and the bridge table expands the relationship into one row per relationship.</p>
+<h2 id="why-bridge-rows-multiply">Why bridge rows multiply</h2>
+<p>Bridge tables are often intentionally denormalized for reporting convenience, but that also means they can look repetitive.</p>
+<p>You may see:</p>
+<ul>
+<li>one claim with several associated contacts</li>
+<li>one revision with several linked agencies</li>
+<li>one policy revision with multiple named insured or interest records</li>
+<li>one claim with several payment or exposure rows</li>
+</ul>
+<p>This is not a bug. It is the actual grain of the relationship.</p>
+<p>A bridge-table row should be read as:</p>
+<ul>
+<li>“this parent is linked to this child”</li>
+<li>not “this is a second copy of the parent object”</li>
+</ul>
+<h2 id="practical-examples">Practical examples</h2>
+<h3 id="claim-to-contact-bridge">Claim-to-contact bridge</h3>
+<p><code>v_claims_contacts</code> is a classic bridge relationship table.</p>
+<p>It usually connects:</p>
+<ul>
+<li><code>claim_id</code></li>
+<li><code>contact_id</code></li>
+<li>maybe role flags or relationship type</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-sql">SELECT *
+FROM v_claims_contacts
+WHERE claim_id = 'YOUR_CLAIM_ID';
+</code></pre>
+<p>This returns the list of contacts associated with the claim. The next step is usually joining to <code>v_contacts</code> to get the contact master fields.</p>
+<h3 id="revision-to-contact-bridge">Revision-to-contact bridge</h3>
+<p><code>v_revisions_contacts</code> follows the same pattern, but at the revision layer.</p>
+<p>This is often the key path when a record is anchored in a policy revision rather than a claim or contact record.</p>
+<pre><code class="language-sql">SELECT r.revision_id, r.policy_number, rc.contact_id, c.contact_name
+FROM v_revisions r
+LEFT JOIN v_revisions_contacts rc
+  ON r.revision_id = rc.revision_id
+LEFT JOIN v_contacts c
+  ON rc.contact_id = c.contact_id
+WHERE r.policy_number = 'YOUR_POLICY_NUMBER';
+</code></pre>
+<h3 id="revision-to-agency-bridge">Revision-to-agency bridge</h3>
+<p><code>v_revisions_agencies</code> is another good example of a relationship view that is not a base entity row.</p>
+<p>Its purpose is to connect:</p>
+<ul>
+<li>a policy revision</li>
+<li>to one or more agency records</li>
+</ul>
+<p>This is not a duplicate agency table; it is the agency relationship layer.</p>
+<h2 id="csv-analog">CSV analog</h2>
+<p>The CSV export follows the same design concept, although the files are more fragmented.</p>
+<p>Examples:</p>
+<ul>
+<li><code>claims.csv</code> = master claim rows</li>
+<li><code>claims_contacts.csv</code> = claim-to-contact bridge rows</li>
+<li><code>policies.csv</code> = policy master rows</li>
+<li><code>policy_terms.csv</code> = revision/term rows</li>
+<li><code>addresses.csv</code> / <code>phones.csv</code> / <code>emails.csv</code> = child object tables that are often flattened later into API or SQL views</li>
+</ul>
+<p>This is the same pattern as report views, just expressed in raw export files rather than a database view layer.</p>
+<h2 id="how-to-work-with-bridge-tables-safely">How to work with bridge tables safely</h2>
+<p>When working with a bridge-table-heavy dataset, use this pattern:</p>
+<ol>
+<li>Start with the base entity id you already know.</li>
+<li>Check whether the relationship is stored in a bridge table.</li>
+<li>Join the bridge table to the related base table.</li>
+<li>Keep the grain in mind: bridge rows can multiply the result set.</li>
+<li>Use the base id and relationship ids to validate whether you are looking at a relationship row or a master record.</li>
+</ol>
+<h2 id="quick-rule-of-thumb">Quick rule of thumb</h2>
+<ul>
+<li>Base table = one row per entity</li>
+<li>Bridge table = one row per relationship</li>
+<li>If the same parent id repeats and the result set expands, you are probably looking at a bridge or link table</li>
+</ul>
+<h2 id="common-gotchas">Common gotchas</h2>
+<h3 id="1-why-are-there-multiple-rows-for-one-contact">1. “Why are there multiple rows for one contact?”</h3>
+<p>Because the same contact may be linked to multiple revisions, claims, agencies, or roles.</p>
+<h3 id="2-is-this-a-duplicate">2. “Is this a duplicate?”</h3>
+<p>Maybe not. It may be a valid bridge row representing a separate relationship instance.</p>
+<h3 id="3-why-do-the-csvs-and-sql-views-look-different">3. “Why do the CSVs and SQL views look different?”</h3>
+<p>Because the raw CSV layer is not always pre-aggregated like the report layer. The bridge layer may be split across many files and then flattened later.</p>
+<h2 id="recommended-documentation-principle">Recommended documentation principle</h2>
+<p>When a table name includes a relationship phrase such as:</p>
+<ul>
+<li><code>claims_contacts</code></li>
+<li><code>revisions_contacts</code></li>
+<li><code>revisions_agencies</code></li>
+</ul>
+<p>treat it as a relationship layer, not as a new master entity table.</p>
+<p>This is especially important when building join logic or validating whether a result set is showing duplicated relationship rows rather than duplicate master records.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
