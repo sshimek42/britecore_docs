@@ -1,86 +1,60 @@
 # britecore_docs
 
-## Purpose
+A shared documentation and architecture hub for BriteCore reporting, lineage, and data-model patterns.
 
-`britecore_docs` is the synthesis layer for the broader BriteCore ecosystem. Its job is to explain how the data stack fits together across repos, not to duplicate the raw implementation detail that lives in the owning projects.
+This repository is intentionally a synthesis layer: it explains how the wider BriteCore ecosystem fits together, where the source-of-truth lives, and how to work across raw exports, API access, and SQL/reporting layers without duplicating implementation detail in the owning projects.
 
-This repo consolidates guidance across:
+## What this project covers
 
-- `C:\PythonProjects\BriteCore\britecore_mcp`
-- `C:\PythonProjects\BriteCore\britecore_sql_reports`
-- `C:\PythonProjects\BriteCore\britecore_sdk`
-- `C:\PythonProjects\PolicyReporting`
-- `C:\PythonProjects\data\britecore-csv-loader`
-- `C:\PythonProjects\data\policy-data-warehouse`
-- `C:\PythonProjects\data\NAIC`
+- ecosystem architecture and repo boundaries
+- source-of-truth ownership and routing guidance
+- CSV, API, and SQL/report access patterns
+- data lineage, grain, joins, and bridge relationships
+- domain references for policies, claims, contacts, properties, payments, and related objects
+- onboarding and workflow guidance for cross-project work
 
-## What this project does not do
+## What this project is not
 
-`britecore_docs` is not the canonical home for:
+This repo is not the canonical home for:
 
-- report SQL definitions
-- report cache profiles
-- logical catalog implementation details
-- raw export/loader code
-- runtime MCP server code
+- report implementation code
+- runtime application logic
+- raw loader or warehouse code
+- generated operational artifacts
 
-Those assets remain owned by their source repos.
+Those details remain in the source repos that own them.
 
-## Source-of-truth philosophy
+## Working model
 
-The repo boundaries are deliberate:
+The goal of this project is to make the broader system easier to understand:
 
-- `britecore_mcp` is canonical for MCP runtime behavior, discovery tooling, and logical-layer interaction.
-- `britecore_sql_reports` is canonical for SQL report definitions, report-table docs, validation SQL, and report metadata artifacts.
-- `britecore_sdk` remains canonical for SDK configuration, API patterns, and automation flows.
-- `PolicyReporting` remains canonical for cross-source reporting service logic and staging/reporting behavior.
-- `britecore-csv-loader` remains canonical for raw CSV reconstruction and ingestion logic.
-- `policy-data-warehouse` remains canonical for warehouse loading, raw/core/reporting schema boundaries, and cross-source SQL reporting plumbing.
-- `NAIC` remains canonical for regulatory extraction and BriteCore-to-NAIC mapping, validation, and report generation.
-
-`britecore_docs` is the curated map and explanation layer: architecture, onboarding, workflow guidance, and cross-project interpretation.
-
-This repo intentionally focuses on the bridge knowledge that is often duplicated or missing across the stack: repo ownership, lineage, grain, task routing, and semantic conventions.
+- identify the correct source repo for a task
+- explain how the same business object appears in different access modes
+- document the relationship patterns that are easy to miss across CSV, API, and SQL/report layers
+- preserve a clear boundary between implementation code and shared ecosystem knowledge
 
 ## Structure
 
 ```text
 britecore_docs/
   README.md
-  agent.md
   mkdocs.yml
   docs/
     index.md
     architecture.md
     onboarding.md
     quickstarts.md
-    reporting/
-      reporting_playbook.md
-      sql_reporting_cookbook.md
-      report_metadata_examples.md
-    projects/
-      britecore_mcp.md
-      britecore_sql_reports.md
-      britecore_sdk.md
-      policy_reporting.md
-      britecore_csv_loader.md
+    source_of_truth_matrix.md
+    csv_api_sql_mapping.md
+    access_mode_decision_matrix.md
+    bridge_table_guide.md
+    domain_reference.md
+    ai_workflow_guide.md
 ```
 
-## Working rule
+## Recommended usage
 
-When a question is about the implementation detail, look in the owning project first. When a question is about how the ecosystem fits together, use `britecore_docs` as the explanatory layer.
-
-This keeps the docs project useful without turning it into a second copy of the operational systems it describes.
-
-## Canonical-source rule for centralized documentation
-
-The docs hub should be a map, not a mirror. The owning project remains the canonical home for the details that change with the code.
-
-- `britecore_sdk` is the canonical source for SDK API usage, installation, configuration, auth, examples, and troubleshooting.
-- `britecore_mcp` remains the canonical source for MCP runtime behavior, discovery tooling, and logical-layer interaction.
-- `britecore_sql_reports` remains canonical for report SQL and validation logic.
-- `PolicyReporting` remains canonical for service-layer reporting behavior.
-- `britecore-csv-loader` remains canonical for CSV reconstruction and ingestion logic.
-
-For the SDK specifically, this project should link to the live project docs instead of duplicating them. Treat `C:\PythonProjects\BriteCore\britecore_sdk\README.md`, `GETTING_STARTED.md`, `CONFIG_MANAGEMENT.md`, `API.md`, `ARCHITECTURE.md`, and `TROUBLESHOOTING.md` as the authoritative documentation set.
+- Start here for ecosystem understanding, repo selection, and cross-project workflows.
+- Follow the owning project docs for implementation details and canonical examples.
+- Use this repo as the bridge and reference layer, not as a second copy of production logic.
 

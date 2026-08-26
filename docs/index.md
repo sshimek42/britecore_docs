@@ -1,27 +1,20 @@
 # britecore_docs
 
-Welcome to the consolidated BriteCore documentation hub.
+A shared documentation and architecture hub for the BriteCore ecosystem.
 
-This project unifies the documentation and working model across the local BriteCore ecosystem:
+This site brings together the patterns, repo boundaries, lineage rules, and reporting concepts that make the wider data platform easier to understand across projects.
 
-- `britecore_mcp` — MCP server, logical-layer reporting, and report-table guidance
-- `britecore_sql_reports` — SQL report definitions and report-authoring assets
-- `britecore_sdk` — Python SDK for the BriteCore API
-- `PolicyReporting` — cross-source reporting service layer
-- `britecore-csv-loader` — raw CSV relationship discovery and extraction tooling
-- `policy-data-warehouse` — landed warehouse model for raw/core/reporting data
-- `NAIC` — regulatory extraction and BriteCore-to-NAIC mapping and reporting
+It is designed as a bridge layer: the source repositories remain the canonical home for implementation detail, while this project explains how the pieces fit together.
 
 ## What this site is for
 
-`britecore_docs` is the shared orientation layer for:
+This documentation is intended to help with:
 
-- architecture across tools
-- data flow and integration patterns
-- logical-layer reporting guidance
-- cross-project setup and usage guides
-- onboarding and reporting workflow standards
-- curated references back to the source repos
+- understanding repo roles and source-of-truth ownership
+- tracing how the same business object appears across CSV, API, and SQL/report layers
+- documenting data flow, grain, and relationship patterns
+- onboarding new contributors to the broader reporting and integration model
+- describing common reporting workflows without duplicating raw implementation logic
 
 ## Start here
 
