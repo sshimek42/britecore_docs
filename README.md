@@ -1,7 +1,7 @@
 # britecore_docs
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sshimek42/britecore_docs/main/assets/britecore-docs-banner.svg" alt="BriteCore Docs banner" width="100%" />
+  <img src="https://github.com/sshimek42/britecore_docs/blob/main/assets/britecore-docs-banner.svg?raw=1" alt="BriteCore Docs banner" width="100%" />
 </p>
 
 [![Public Repo](https://img.shields.io/badge/public-repo-3b82f6?logo=github)](https://github.com/sshimek42/britecore_docs)
