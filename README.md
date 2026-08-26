@@ -1,5 +1,13 @@
 # britecore_docs
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sshimek42/britecore_docs/main/.assets/britecore-docs-banner.svg" alt="BriteCore Docs banner" width="100%" />
+</p>
+
+[![Public Repo](https://img.shields.io/badge/public-repo-3b82f6?logo=github)](https://github.com/sshimek42/britecore_docs)
+[![Docs Site](https://img.shields.io/badge/docs-GitHub%20Pages-10b981?logo=github)](https://sshimek42.github.io/britecore_docs/)
+[![MkDocs](https://img.shields.io/badge/build-MkDocs-0f766e?logo=markdown)](https://www.mkdocs.org/)
+
 A shared documentation and architecture hub for BriteCore reporting, lineage, and data-model patterns.
 
 This repository is intentionally a synthesis layer: it explains how the wider BriteCore ecosystem fits together, where the source-of-truth lives, and how to work across raw exports, API access, and SQL/reporting layers without duplicating implementation detail in the owning projects.

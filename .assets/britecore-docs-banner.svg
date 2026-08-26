@@ -1,0 +1,32 @@
+<svg width="1280" height="320" viewBox="0 0 1280 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1280" y1="0" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1020"/>
+      <stop offset="0.55" stop-color="#111B2D"/>
+      <stop offset="1" stop-color="#1B2B46"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="170" x2="910" y1="50" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4CC9F0"/>
+      <stop offset="0.5" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="320" rx="26" fill="url(#bg)"/>
+  <g opacity="0.22">
+    <circle cx="1070" cy="80" r="140" fill="#4CC9F0"/>
+    <circle cx="1180" cy="220" r="140" fill="#8B5CF6"/>
+  </g>
+  <g>
+    <rect x="74" y="74" width="170" height="170" rx="28" fill="url(#accent)"/>
+    <path d="M127 114H206C214.837 114 222 121.163 222 130V184C222 192.837 214.837 200 206 200H127C118.163 200 111 192.837 111 184V130C111 121.163 118.163 114 127 114Z" stroke="white" stroke-width="12" opacity="0.9"/>
+    <path d="M146 159H190" stroke="white" stroke-width="12" stroke-linecap="round"/>
+    <path d="M146 146V170" stroke="white" stroke-width="12" stroke-linecap="round"/>
+    <path d="M190 146V170" stroke="white" stroke-width="12" stroke-linecap="round"/>
+    <path d="M146 184H190" stroke="white" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g fill="white">
+    <text x="290" y="150" font-family="Segoe UI, Arial, sans-serif" font-size="68" font-weight="700" letter-spacing="2">BRITECORE</text>
+    <text x="290" y="212" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="600" fill="#93C5FD">DOCS</text>
+    <text x="290" y="260" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#DCEBFF" letter-spacing="3.2">REPORTING • LINEAGE • ARCHITECTURE</text>
+  </g>
+</svg>
