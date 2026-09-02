@@ -70,12 +70,27 @@ Typical configuration inputs:
 
 ## Minimal usage pattern
 
+The SDK now supports lazy shared client initialization, plus explicit per-client initialization when you want full control over connection state. The canonical pattern is either `init_api_client(...)` followed by `get_api_client()` or a direct `BritecoreAPIClient(...).init_client()`.
+
 ```python
-from britecore_sdk.api.api_calls import get_api_client
+from britecore_sdk.api.api_calls import get_api_client, init_api_client
 from britecore_sdk.api.api_calls.v2 import policies
 
+# Shared module client (configured target site or env/settings-backed auth)
+init_api_client(target_site="production")
 client = get_api_client()
 result = policies.retrieve_policy(policy_number="POL001")
+print(result)
+```
+
+Explicit client pattern:
+
+```python
+from britecore_sdk.api.britecore_api_client import BritecoreAPIClient
+from britecore_sdk.api.api_calls.v2 import policies
+
+client = BritecoreAPIClient("production").init_client()
+result = policies.retrieve_policy(policy_number="POL001", client=client)
 print(result)
 ```
 
